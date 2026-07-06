@@ -95,8 +95,51 @@ const businessSchema = {
         </ul>
 
         <a href="tel:8188048204" class="nav__phone">(818) 804-8204</a>
+
+        <button class="nav__burger" id="nav-burger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- MOBILE MENU PANEL -->
+      <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-menu__links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services/pool-maintenance">Pool Maintenance</a></li>
+          <li><a href="/services/pool-inspections">Pool Inspections</a></li>
+          <li><a href="/services/pool-repairs">Pool Repairs</a></li>
+          <li><a href="/services/pool-remodeling">Pool Remodeling</a></li>
+          <li><a href="/services/jacuzzi-service">Jacuzzi Service</a></li>
+          <li><a href="/our-story">Our Story</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <a href="tel:8188048204" class="mobile-menu__phone">(818) 804-8204</a>
       </div>
     </nav>
+
+    <script>
+      const burger = document.getElementById('nav-burger');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      burger?.addEventListener('click', () => {
+        const isOpen = mobileMenu?.classList.toggle('is-open');
+        burger.classList.toggle('is-open', isOpen);
+        burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        document.body.classList.toggle('menu-open', isOpen);
+      });
+
+      // Close the menu when a link inside it is tapped
+      mobileMenu?.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('is-open');
+          burger?.classList.remove('is-open');
+          burger?.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('menu-open');
+        });
+      });
+    </script>
 
     <main>
       <slot />
