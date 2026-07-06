@@ -1,0 +1,137 @@
+---
+// ContactForm.astro
+// Uses Web3Forms (free) — sign up at web3forms.com and replace YOUR_ACCESS_KEY below
+---
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <span class="eyebrow">Get In Touch</span>
+        <h2 style="margin-bottom: 1.5rem;">Contact Us</h2>
+        <p class="lead" style="margin-bottom: 2rem;">
+          We offer free consultations to answer any questions you may have regarding pool maintenance, repairs, scheduling, and pricing. Fill out the form or give us a call to get started.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div>
+            <strong style="font-family: var(--font-display); color: var(--color-deep); display: block; margin-bottom: 0.25rem;">Phone</strong>
+            <a href="tel:8188048204" style="color: var(--color-aqua-dark); font-size: 1.25rem; font-weight: 600;">(818) 804-8204</a>
+          </div>
+          <div>
+            <strong style="font-family: var(--font-display); color: var(--color-deep); display: block; margin-bottom: 0.25rem;">Service Areas</strong>
+            <p style="color: var(--color-muted); font-size: 0.9rem;">Santa Clarita · San Fernando Valley · Encino · Granada Hills · Burbank · Glendale · Calabasas · Woodland Hills · and more</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          id="contact-form"
+        >
+          <!-- Web3Forms access key -->
+          <input type="hidden" name="access_key" value="8de7a49a-5e8b-4e48-b420-933bac9d5db7" />
+          <input type="hidden" name="subject" value="New Contact from GK Swimming Pools Website" />
+          <input type="checkbox" name="botcheck" style="display: none;" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first_name">First Name *</label>
+              <input type="text" id="first_name" name="first_name" autocomplete="given-name" required />
+            </div>
+            <div class="form-group">
+              <label for="last_name">Last Name *</label>
+              <input type="text" id="last_name" name="last_name" autocomplete="family-name" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address *</label>
+            <input type="text" id="address" name="address" autocomplete="street-address" required placeholder="Your pool's address" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                autocomplete="tel"
+                inputmode="tel"
+                pattern="[0-9\s\-\(\)\+\.]{7,20}"
+                title="Enter a valid phone number (digits only, with optional spaces, dashes, or parentheses)"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your pool and what you need..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary" style="width: 100%; font-size: 1rem;">
+            Send Message
+          </button>
+
+          <p id="form-result" style="margin-top: 1rem; font-size: 0.875rem; display: none;"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const result = document.getElementById('form-result') as HTMLParagraphElement;
+
+  function showError(message: string) {
+    result.style.display = 'block';
+    result.style.color = '#e53e3e';
+    result.textContent = message;
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Belt-and-suspenders validation on top of the browser's native checks,
+    // so a bad email or phone number never reaches Web3Forms at all.
+    const emailInput = document.getElementById('email') as HTMLInputElement;
+    const phoneInput = document.getElementById('phone') as HTMLInputElement;
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailInput.value)) {
+      showError('Please enter a valid email address.');
+      emailInput.focus();
+      return;
+    }
+
+    const phonePattern = /^[0-9\s\-\(\)\+\.]{7,20}$/;
+    if (phoneInput.value && !phonePattern.test(phoneInput.value)) {
+      showError('Please enter a valid phone number.');
+      phoneInput.focus();
+      return;
+    }
+
+    const formData = new FormData(form);
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData,
+    });
+    const data = await res.json();
+    result.style.display = 'block';
+    if (data.success) {
+      result.style.color = 'var(--color-aqua-dark)';
+      result.textContent = "Thanks! We'll be in touch within 24 hours.";
+      form.reset();
+    } else {
+      result.style.color = '#e53e3e';
+      result.textContent = 'Something went wrong. Please call us directly at (818) 804-8204.';
+    }
+  });
+</script>

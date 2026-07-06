@@ -1,0 +1,313 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout
+  title="Pool service near me in Santa Clarita | GK Swimming Pools"
+  description="Family-run pool service near you in Santa Clarita, the San Fernando Valley, and greater LA. Maintenance, repairs, inspections, remodeling. (818) 804-8204."
+>
+
+  <!-- HERO -->
+  <section class="hero">
+    <!-- Full-bleed background photo -->
+    <div class="hero__bg">
+      <img
+        src="/images/hero-pool-1920.jpg"
+        alt="Pool technician skimming a clean pool in Los Angeles"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+
+    <!-- Text sits directly on the photo now — no floating card -->
+    <div class="container hero__inner">
+      <!-- H1 stays for SEO — styled small like an eyebrow -->
+      <h1 class="hero__h1">Pool Service Across Santa Clarita &amp; the San Fernando Valley</h1>
+
+      <!-- The big marketing headline -->
+      <p class="hero__offer">Sign Up Now<br>Get a <em>Free Filter Cleaning</em></p>
+
+      <!-- Subheader / transformation line -->
+      <p class="hero__sub">Pool service plans starting at $150/mo. Crystal clear water, honest pricing, and a technician who actually shows up.</p>
+
+      <div class="hero__actions">
+        <a href="/contact" class="btn btn--primary">Get Booked This Week</a>
+        <a href="tel:8188048204" class="btn btn--outline">(818) 804-8204</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES — 4 across -->
+  <section class="reveal section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">What We Do</span>
+        <h2>Services</h2>
+        <p>From routine weekly maintenance to full remodels, we handle it all.</p>
+      </div>
+
+      <div class="cards-grid cards-grid--four">
+        <div class="card card--photo">
+          <div class="card__media">
+            <img src="/images/services/pool-maintenance.webp" alt="Backyard pool with lounge chairs maintained by GK Swimming Pools" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <h3>Pool Maintenance</h3>
+            <p>Weekly or bi-weekly service that keeps your water chemistry perfect year-round.</p>
+            <ul>
+              <li>Water Chemistry Balancing</li>
+              <li>Complete Debris Removal</li>
+              <li>Filter Cleaning</li>
+              <li>Weekly Reports</li>
+            </ul>
+            <a href="/services/pool-maintenance" class="btn btn--primary">Learn More</a>
+          </div>
+        </div>
+
+        <div class="card card--photo">
+          <div class="card__media">
+            <img src="/images/services/pool-inspections.webp" alt="Renovated pool waterfall feature inspected by GK Swimming Pools" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <h3>Pool Inspections</h3>
+            <p>Comprehensive structural, plumbing, and equipment inspections with detailed reports.</p>
+            <ul>
+              <li>Structure Inspection</li>
+              <li>Plumbing Inspection</li>
+              <li>Equipment Inspection</li>
+              <li>Pool Light Inspection</li>
+            </ul>
+            <a href="/services/pool-inspections" class="btn btn--primary">Learn More</a>
+          </div>
+        </div>
+
+        <div class="card card--photo">
+          <div class="card__media">
+            <img src="/images/services/pool-repair.webp" alt="Resort-style pool repaired and maintained by GK Swimming Pools" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <h3>Pool Repair</h3>
+            <p>Fast, reliable repair work from crack repair to full equipment replacement.</p>
+            <ul>
+              <li>Crack Repair</li>
+              <li>Pipe Repair</li>
+              <li>Equipment Repair</li>
+              <li>Pool Light Repair</li>
+            </ul>
+            <a href="/services/pool-repairs" class="btn btn--primary">Learn More</a>
+          </div>
+        </div>
+
+        <div class="card card--photo">
+          <div class="card__media">
+            <img src="/images/services/pool-remodeling.webp" alt="Remodeled backyard pool with terra cotta decking and Mediterranean landscaping" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <h3>Pool Remodeling</h3>
+            <p>Transform your backyard with new plaster, tile, decking, and smart automation.</p>
+            <ul>
+              <li>Plaster Resurfacing</li>
+              <li>Tile & Coping</li>
+              <li>Deck Remodeling</li>
+              <li>Smart System Integration</li>
+            </ul>
+            <a href="/services/pool-remodeling" class="btn btn--primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR STORY with chemicals image -->
+  <section class="reveal section section--dark">
+    <div class="container">
+      <div class="story-grid">
+        <div>
+          <div class="section-header">
+            <span class="eyebrow">Our Story</span>
+            <h2>Built on trust, not just water chemistry</h2>
+          </div>
+          <p class="story-lead">
+            GK Swimming Pools is built on more than just water chemistry. It was built on legacy.
+          </p>
+          <p class="story-body">
+            In the 1970s, our grandfather immigrated to America with a simple promise: work hard, be honest, and earn people's trust. He fulfilled that promise one pool at a time, building a reputation for dependable service across Los Angeles that neighbors still talk about today. Pool maintenance wasn't a transaction. It was a handshake. A commitment.
+          </p>
+          <p class="story-body">
+            Decades later, those same values are the foundation of everything we do. GK Swimming Pools was named after him, to honor the standard of pool service he spent a lifetime building across LA.
+          </p>
+          <a href="/our-story" class="btn btn--primary">Read Our Story</a>
+        </div>
+        <div class="story-image">
+          <img src="/images/chemicals.webp" alt="Pool water chemistry testing kit" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="reveal section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Why GK</span>
+        <h2>Why choose us</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-item__num">01</div>
+          <h4>Transparent Fair Pricing</h4>
+          <p>No surprise charges, no hidden chemical fees, no upsells you didn't ask for. We tell you what your pool needs, what it costs, and why.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-item__num">02</div>
+          <h4>We Know LA Pools</h4>
+          <p>Hard water in the Valley. Hillside debris in Santa Clarita. Year-round UV exposure. Our service is built around these realities.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-item__num">03</div>
+          <h4>Proactive, Not Reactive</h4>
+          <p>We catch small problems before they become expensive ones. Every visit is documented, chemicals added, equipment noted, issues flagged.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SLIDER -->
+  <section class="reveal testimonials">
+    <div class="container">
+      <h2>What our clients say</h2>
+    </div>
+    <div class="testimonials__track-wrap">
+      <div class="testimonials__track" id="testimonials-track">
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__inner">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__quote">"Best Pool Service in LA. They take pride in their work and it shows every single week."</p>
+            <div class="testimonial-card__author">James, Granada Hills</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__inner">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__quote">"On Time. Professional. Can't recommend enough."</p>
+            <div class="testimonial-card__author">Dan, Burbank</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__inner">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__quote">"Very thorough and keeps us up to date."</p>
+            <div class="testimonial-card__author">Kristina, Sherman Oaks</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="testimonials__controls">
+      <button class="testimonials__btn" id="prev-btn" aria-label="Previous">&#8592;</button>
+      <div class="testimonials__dots" id="testimonials-dots"></div>
+      <button class="testimonials__btn" id="next-btn" aria-label="Next">&#8594;</button>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="reveal section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Common Questions</span>
+        <h2>FAQs</h2>
+      </div>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>What is the average cost to remodel a swimming pool?</summary>
+          <p>Pool remodeling costs in Los Angeles vary widely based on what's being done. A basic replaster starts around $5,000 to $10,000, while a full remodel with new tile, coping, water features, and deck work can range from $25,000 to $75,000 or more. We offer transparent, itemized estimates so you know exactly where every dollar is going before we start. Financing options are also available for larger projects.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>How long does a pool remodeling project usually take?</summary>
+          <p>Most pool remodeling projects in the Los Angeles area take anywhere from 1 to 8 weeks depending on scope. A straightforward replaster typically runs 7 to 10 days from drain to refill, while a full remodel involving new coping, tile, water features, and deck work can take 4 to 8 weeks. We provide a firm timeline before work begins and keep you updated at every stage.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What are the best materials for swimming pool resurfacing?</summary>
+          <p>The most popular resurfacing options are standard plaster, quartz aggregate, and pebble finishes, each with its own tradeoffs in cost, durability, and appearance. Standard white plaster is the most affordable but tends to roughen and stain faster, especially in LA's hard water. For most LA homeowners, a pebble or quartz surface is the better long-term investment.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>How often should I schedule swimming pool maintenance in LA?</summary>
+          <p>For most Los Angeles homeowners, weekly pool maintenance is the right call. LA's year-round sunshine, high UV index, and near-constant pool use deplete chemicals and accumulate debris faster than almost anywhere else in the country. During cooler winter months, many pools can shift to bi-weekly visits without issue.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is pool maintenance necessary during winter?</summary>
+          <p>Yes. Unlike colder climates where pools are drained and covered for the season, Los Angeles pools need year-round maintenance. Southern California winters are mild enough for algae to thrive, and rain, winds, and debris don't stop just because swim season is over. Neglecting winter service is one of the most reliable ways to arrive at spring with a green, imbalanced pool.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What areas of Los Angeles do you service?</summary>
+          <p>GK Swimming Pools serves the greater Los Angeles area, with home base in Santa Clarita and Valencia. We regularly service pools throughout the San Fernando Valley, including Northridge, Granada Hills, Porter Ranch, Woodland Hills, and Encino, as well as Burbank, Glendale, Pasadena, La Canada Flintridge, Calabasas, Agoura Hills, and Westlake Village.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="reveal cta-band">
+    <div class="container">
+      <h2>Get booked this week</h2>
+      <p>Free consultation. No contracts. Honest pricing. Call us or fill out the form below.</p>
+      <a href="tel:8188048204" class="btn btn--primary">(818) 804-8204</a>
+    </div>
+  </div>
+
+  <ContactForm />
+
+</Layout>
+
+<script>
+  const track = document.getElementById('testimonials-track');
+  const dotsContainer = document.getElementById('testimonials-dots');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+
+  const cards = track.querySelectorAll('.testimonial-card');
+  const total = cards.length;
+  let current = 0;
+  let autoTimer;
+
+  // Build dots
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'testimonials__dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Testimonial ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(index) {
+    current = (index + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsContainer.querySelectorAll('.testimonials__dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function startAuto() {
+    autoTimer = setInterval(() => goTo(current + 1), 5000);
+  }
+
+  function stopAuto() {
+    clearInterval(autoTimer);
+  }
+
+  prevBtn.addEventListener('click', () => { stopAuto(); goTo(current - 1); startAuto(); });
+  nextBtn.addEventListener('click', () => { stopAuto(); goTo(current + 1); startAuto(); });
+
+  startAuto();
+</script>
