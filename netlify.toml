@@ -1,3 +1,22 @@
 [build]
   command = "npm run build"
   publish = "dist"
+
+# 301 redirects for old Wix-era URLs still indexed by Google (confirmed via
+# search results after migration). Preserves link equity and stops indexed
+# links from dead-ending at the 404 page. Add more as Search Console's
+# "Not found (404)" report reveals them.
+[[redirects]]
+  from = "/swimming-pool-maintenance"
+  to = "/services/pool-maintenance"
+  status = 301
+
+[[redirects]]
+  from = "/residential-swimming-pool-services"
+  to = "/services/pool-maintenance"
+  status = 301
+
+[[redirects]]
+  from = "/commercial-swimming-pool-services"
+  to = "/services/commercial-pool-services"
+  status = 301

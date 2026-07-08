@@ -29,6 +29,10 @@ Real-world tasks (not code) still needed to finish the SEO/launch work:
 
 ## Also done
 - [x] Google Ads conversion tracking installed (AW-17308243497) — phone call clicks tracked automatically on every tel: link site-wide, form submission tracked only on confirmed successful Web3Forms submission (not just click, to avoid counting failed/invalid attempts)
+- [x] Migration 301 redirects added (netlify.toml) for old Wix URLs still in Google's index: /swimming-pool-maintenance, /residential-swimming-pool-services, /commercial-swimming-pool-services. Watch Search Console → Indexing → Pages → "Not found (404)" over the coming weeks and add redirects for any more that surface.
+
+## Resolved
+- [x] Commercial confirmed (apartments, hotels, gyms, all cities). Built /services/commercial-pool-services targeting real keyword data; old Wix commercial URL now 301s to it; added to nav, mobile menu, footer, and a linked line on all city pages.
 - [x] Contact form: Web3Forms access key added to `src/components/ContactForm.astro` — form is live, test a submission once deployed
 - Schema placeholders confirmed: priceRange "$$", hours Mon-Sat 7am-6pm, email admin@GKswimmingpools.com, sameAs (Yelp + Google Business Profile) — all set in `src/layouts/Layout.astro`
 - Domain is live via Netlify (not Cloudflare) — see wrangler.jsonc, unused but harmless leftover from the earlier Cloudflare attempt
