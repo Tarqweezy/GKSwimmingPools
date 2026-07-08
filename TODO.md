@@ -13,22 +13,22 @@ Real-world tasks (not code) still needed to finish the SEO/launch work:
 - [ ] BBB (optional, adds trust)
 
 ## 3. Google Search Console
-- [ ] Verify domain (TXT record via Netlify DNS, since domain now points there)
-- [ ] Submit sitemap: `https://gkswimmingpools.com/sitemap-index.xml`
+- [x] Domain verified via HTML meta tag (in Layout.astro, applies site-wide)
+- [x] Sitemap submitted: `https://gkswimmingpools.com/sitemap-index.xml`
 
 ## 4. Review schema
-- Add `AggregateRating` / `Review` JSON-LD once there are real reviews on Google or Yelp
-- Never fabricate ratings or review counts, Google penalizes this
+- [x] AggregateRating added: 4.8 stars, 13 reviews (weighted from Google 10×5.0 + Yelp 3×4.0). Update the math in `src/layouts/Layout.astro` whenever real counts change.
 
 ---
 
 ## Technical finishing touches (site is live now)
-- [ ] Custom 404 page (currently shows Netlify's generic default)
-- [ ] Proper favicon (currently just reusing the full logo file)
-- [ ] Analytics (Google Analytics or similar — currently zero visibility into traffic)
-- [ ] City page word count still ~200-235 words vs. the 300-500 target in gk-seo skill
+- [x] Favicon (generated from GK.png logo, full set in `public/favicon/`)
+- [x] Custom 404 page (`src/pages/404.astro` — branded, with popular page links)
+- [x] Analytics: Google Analytics 4 installed site-wide (Measurement ID G-7QDN080XF0, in `src/layouts/Layout.astro`)
+- [x] City page word count improved: added service card descriptions + a genuinely city-specific "Why [City] Homeowners Choose GK" trust paragraph on all 12 pages (drawn from the already-researched local facts, not generic filler)
 
-## Also still pending (separate from above)
+## Also done
+- [x] Google Ads conversion tracking installed (AW-17308243497) — phone call clicks tracked automatically on every tel: link site-wide, form submission tracked only on confirmed successful Web3Forms submission (not just click, to avoid counting failed/invalid attempts)
 - [x] Contact form: Web3Forms access key added to `src/components/ContactForm.astro` — form is live, test a submission once deployed
 - Schema placeholders confirmed: priceRange "$$", hours Mon-Sat 7am-6pm, email admin@GKswimmingpools.com, sameAs (Yelp + Google Business Profile) — all set in `src/layouts/Layout.astro`
 - Domain is live via Netlify (not Cloudflare) — see wrangler.jsonc, unused but harmless leftover from the earlier Cloudflare attempt

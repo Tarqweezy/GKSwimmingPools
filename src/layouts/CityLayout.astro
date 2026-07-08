@@ -13,6 +13,7 @@ interface Props {
   caseStudyTitle?: string;
   caseStudy?: string;
   heroImage?: string;
+  whyChooseUs?: string;
 }
 
 const {
@@ -26,6 +27,7 @@ const {
   caseStudyTitle,
   caseStudy,
   heroImage,
+  whyChooseUs,
 } = Astro.props;
 
 const title = `Pool Service in ${city}, ${region} | GK Swimming Pools`;
@@ -64,39 +66,49 @@ const pageAreaServed = [city, ...nearbyAreas];
     </div>
   </section>
 
-  <!-- SERVICES — lightweight cross-links only. Full descriptions live on the
-       dedicated service pages; repeating them here on all 12 city pages was
-       exactly the duplicate-content pattern flagged in the SEO skill file. -->
+  <!-- SERVICES — cards with brief descriptions, linking to the full service pages -->
   <section class="section section--alt">
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">What We Do in {city}</span>
         <h2>Our Pool Services</h2>
       </div>
-      <div class="service-links-grid">
-        <a href="/services/pool-maintenance" class="service-link">
-          <span class="service-link__icon">🏊</span>
-          <span class="service-link__title">Pool Maintenance</span>
-          <span class="service-link__arrow">&rarr;</span>
+      <div class="service-cards-grid">
+        <a href="/services/pool-maintenance" class="service-card">
+          <span class="service-card__icon">🏊</span>
+          <span class="service-card__title">Pool Maintenance</span>
+          <p class="service-card__desc">We maintain your pool's chemistry and keep the water clear and safe year-round. You'll always be updated on anything going on with your pool.</p>
         </a>
-        <a href="/services/pool-repairs" class="service-link">
-          <span class="service-link__icon">🔧</span>
-          <span class="service-link__title">Pool Repairs</span>
-          <span class="service-link__arrow">&rarr;</span>
+        <a href="/services/pool-repairs" class="service-card">
+          <span class="service-card__icon">🔧</span>
+          <span class="service-card__title">Pool Repairs</span>
+          <p class="service-card__desc">Fast, reliable repairs for cracks, leaks, pipes, and equipment. We diagnose the real problem and fix it right the first time.</p>
         </a>
-        <a href="/services/pool-inspections" class="service-link">
-          <span class="service-link__icon">🔍</span>
-          <span class="service-link__title">Pool Inspections</span>
-          <span class="service-link__arrow">&rarr;</span>
+        <a href="/services/pool-inspections" class="service-card">
+          <span class="service-card__icon">🔍</span>
+          <span class="service-card__title">Pool Inspections</span>
+          <p class="service-card__desc">A full inspection of your pool and its system for leaks, damage, and other issues, before they become expensive problems.</p>
         </a>
-        <a href="/services/pool-remodeling" class="service-link">
-          <span class="service-link__icon">&#10024;</span>
-          <span class="service-link__title">Pool Remodeling</span>
-          <span class="service-link__arrow">&rarr;</span>
+        <a href="/services/pool-remodeling" class="service-card">
+          <span class="service-card__icon">&#10024;</span>
+          <span class="service-card__title">Pool Remodeling</span>
+          <p class="service-card__desc">Transform your backyard with new plaster, tile, decking, and modern upgrades built to last for years to come.</p>
         </a>
       </div>
     </div>
   </section>
+
+  <!-- WHY CHOOSE US IN THIS CITY — real, city-specific trust paragraph -->
+  {whyChooseUs && (
+    <section class="section">
+      <div class="container">
+        <div class="why-city-box">
+          <span class="eyebrow">Why {city}</span>
+          <p class="why-city-box__text">{whyChooseUs}</p>
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- LOCAL CALLOUTS (city-specific reasons) -->
   {callouts.length > 0 && (

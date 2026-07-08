@@ -38,6 +38,17 @@ const businessSchema = {
     addressCountry: "US",
   },
   areaServed: areaServed.map((city) => ({ "@type": "City", name: city })),
+  // AggregateRating: weighted average across Google (10 reviews, 5.0) and
+  // Yelp (3 reviews, 4.0) = 62 total stars / 13 reviews = 4.8.
+  // Update these two numbers whenever review counts change meaningfully —
+  // never estimate, always pull the real current numbers from both platforms.
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.8",
+    reviewCount: "13",
+    bestRating: "5",
+    worstRating: "1",
+  },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -60,13 +71,64 @@ const businessSchema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="google-site-verification" content="OS_h77ISBhBeBhClgRZf0jAvgkQQiJKcIogQuYtNgwg" />
+
+    <!-- Google tag (gtag.js) — one shared loader for both GA4 and Google Ads.
+         is:inline is intentional here: Google's own instructions require this
+         literally inline in <head> on every page, and gtag/dataLayer need to
+         be true globals (not scoped to a bundled ES module) so other scripts
+         on the page, like the contact form, can call them. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QDN080XF0"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7QDN080XF0');   // Google Analytics 4
+      gtag('config', 'AW-17308243497'); // Google Ads
+
+      // Shared conversion helper — takes the specific label for each action,
+      // avoids the name collision from pasting Google's two separate snippets
+      // verbatim (both were named the same thing, which would silently break
+      // one of them). event_timeout is a safety net: if the tracking beacon
+      // is slow or blocked, navigation still happens after 2s rather than
+      // the click appearing to do nothing.
+      function gtagReportConversion(conversionLabel, url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17308243497/' + conversionLabel,
+          'value': 1.0,
+          'currency': 'USD',
+          'event_callback': callback,
+          'event_timeout': 2000,
+        });
+        return false;
+      }
+
+      // Auto-attach call-conversion tracking to every phone link on every
+      // page (nav, footer, hero buttons, mobile menu, etc.) — no need to
+      // edit each one by hand across the site.
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+          link.addEventListener('click', function () {
+            gtagReportConversion('4AchCLKf08wcEKmsm71A');
+          });
+        });
+      });
+    </script>
+
     <link rel="canonical" href={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:site_name" content="GK Swimming Pools" />
-    <link rel="icon" type="image/png" href="/images/logo-white.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
   </head>
   <body>

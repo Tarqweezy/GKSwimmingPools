@@ -129,6 +129,10 @@
       result.style.color = 'var(--color-aqua-dark)';
       result.textContent = "Thanks! We'll be in touch within 24 hours.";
       form.reset();
+      // @ts-ignore — gtagReportConversion is defined globally in Layout.astro
+      if (typeof gtagReportConversion === 'function') {
+        gtagReportConversion('gfIgCMex08wcEKmsm71A');
+      }
     } else {
       result.style.color = '#e53e3e';
       result.textContent = 'Something went wrong. Please call us directly at (818) 804-8204.';
