@@ -29,6 +29,7 @@ Real-world tasks (not code) still needed to finish the SEO/launch work:
 
 ## Also done
 - [x] Google Ads conversion tracking installed (AW-17308243497) — phone call clicks tracked automatically on every tel: link site-wide, form submission tracked only on confirmed successful Web3Forms submission (not just click, to avoid counting failed/invalid attempts)
+- [x] Schema quick wins: FAQPage (homepage + commercial page), Service schema (all 6 service pages), BreadcrumbList (all nested pages) — auto-generated in Layout.astro so future pages inherit automatically
 - [x] Migration 301 redirects added (netlify.toml) for old Wix URLs still in Google's index: /swimming-pool-maintenance, /residential-swimming-pool-services, /commercial-swimming-pool-services. Watch Search Console → Indexing → Pages → "Not found (404)" over the coming weeks and add redirects for any more that surface.
 
 ## Resolved

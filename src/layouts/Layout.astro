@@ -62,6 +62,59 @@ const businessSchema = {
     "https://share.google/yhUdlVxS35lH8ZsIS",
   ],
 };
+
+// --- Auto-generated per-page schema ---
+const SITE = "https://www.gkswimmingpools.com";
+const pathname = Astro.url.pathname.replace(/\/$/, "");
+const segments = pathname.split("/").filter(Boolean);
+
+// BreadcrumbList: Home + current page (intermediate segments like /services
+// have no real page, so they're intentionally skipped — breadcrumb items
+// should only reference pages that actually exist).
+const humanize = (s: string) =>
+  s.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+const breadcrumbSchema =
+  segments.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: humanize(segments[segments.length - 1]),
+            item: `${SITE}${pathname}`,
+          },
+        ],
+      }
+    : null;
+
+// Service schema for the six service pages
+const SERVICE_NAMES: Record<string, string> = {
+  "/services/pool-maintenance": "Pool Maintenance",
+  "/services/pool-inspections": "Pool Inspections",
+  "/services/pool-repairs": "Pool Repairs",
+  "/services/pool-remodeling": "Pool Remodeling",
+  "/services/jacuzzi-service": "Jacuzzi Service",
+  "/services/commercial-pool-services": "Commercial Pool Service",
+};
+const serviceName = SERVICE_NAMES[pathname];
+const serviceSchema = serviceName
+  ? {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: serviceName,
+      serviceType: serviceName,
+      provider: {
+        "@type": "LocalBusiness",
+        name: "GK Swimming Pools",
+        telephone: "+18188048204",
+        url: SITE,
+      },
+      areaServed: areaServed.map((city) => ({ "@type": "City", name: city })),
+    }
+  : null;
 ---
 <html lang="en">
   <head>
@@ -130,6 +183,8 @@ const businessSchema = {
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+    {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+    {serviceSchema && <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />}
   </head>
   <body>
 

@@ -1,12 +1,51 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm.astro';
+
+// FAQPage schema — must mirror the visible FAQ section below
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the average cost to remodel a swimming pool?",
+      acceptedAnswer: { "@type": "Answer", text: "Pool remodeling costs in Los Angeles vary widely based on what's being done. A basic replaster starts around $5,000 to $10,000, while a full remodel with new tile, coping, water features, and deck work can range from $25,000 to $75,000 or more. We offer transparent, itemized estimates so you know exactly where every dollar is going before we start. Financing options are also available for larger projects." },
+    },
+    {
+      "@type": "Question",
+      name: "How long does a pool remodeling project usually take?",
+      acceptedAnswer: { "@type": "Answer", text: "Most pool remodeling projects in the Los Angeles area take anywhere from 1 to 8 weeks depending on scope. A straightforward replaster typically runs 7 to 10 days from drain to refill, while a full remodel involving new coping, tile, water features, and deck work can take 4 to 8 weeks. We provide a firm timeline before work begins and keep you updated at every stage." },
+    },
+    {
+      "@type": "Question",
+      name: "What are the best materials for swimming pool resurfacing?",
+      acceptedAnswer: { "@type": "Answer", text: "The most popular resurfacing options are standard plaster, quartz aggregate, and pebble finishes, each with its own tradeoffs in cost, durability, and appearance. Standard white plaster is the most affordable but tends to roughen and stain faster, especially in LA's hard water. For most LA homeowners, a pebble or quartz surface is the better long-term investment." },
+    },
+    {
+      "@type": "Question",
+      name: "How often should I schedule swimming pool maintenance in LA?",
+      acceptedAnswer: { "@type": "Answer", text: "For most Los Angeles homeowners, weekly pool maintenance is the right call. LA's year-round sunshine, high UV index, and near-constant pool use deplete chemicals and accumulate debris faster than almost anywhere else in the country. During cooler winter months, many pools can shift to bi-weekly visits without issue." },
+    },
+    {
+      "@type": "Question",
+      name: "Is pool maintenance necessary during winter?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. Unlike colder climates where pools are drained and covered for the season, Los Angeles pools need year-round maintenance. Southern California winters are mild enough for algae to thrive, and rain, winds, and debris don't stop just because swim season is over. Neglecting winter service is one of the most reliable ways to arrive at spring with a green, imbalanced pool." },
+    },
+    {
+      "@type": "Question",
+      name: "What areas of Los Angeles do you service?",
+      acceptedAnswer: { "@type": "Answer", text: "GK Swimming Pools serves the greater Los Angeles area, with home base in Santa Clarita and Valencia. We regularly service pools throughout the San Fernando Valley, including Northridge, Granada Hills, Porter Ranch, Woodland Hills, and Encino, as well as Burbank, Glendale, Pasadena, La Canada Flintridge, Calabasas, Agoura Hills, and Westlake Village." },
+    },
+  ],
+};
 ---
 
 <Layout
   title="Pool service near me in Santa Clarita | GK Swimming Pools"
   description="Family-run pool service near you in Santa Clarita, the San Fernando Valley, and greater LA. Maintenance, repairs, inspections, remodeling. (818) 804-8204."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- HERO -->
   <section class="hero">

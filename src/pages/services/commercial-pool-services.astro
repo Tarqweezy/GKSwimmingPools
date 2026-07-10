@@ -1,12 +1,41 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ContactForm from '../../components/ContactForm.astro';
+
+// FAQPage schema — must mirror the visible FAQ section below
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What types of commercial properties do you service?",
+      acceptedAnswer: { "@type": "Answer", text: "We service apartment communities, hotels, and gyms across Los Angeles, the San Fernando Valley, and Santa Clarita. If your property has a shared pool or spa, we can maintain it." },
+    },
+    {
+      "@type": "Question",
+      name: "How do commercial reports work?",
+      acceptedAnswer: { "@type": "Answer", text: "After every visit we send a detailed report by email: chemical readings, work performed, and anything we flagged. Property managers get consistent documentation without having to chase it down." },
+    },
+    {
+      "@type": "Question",
+      name: "How often should a commercial pool be serviced?",
+      acceptedAnswer: { "@type": "Answer", text: "It depends on bather load. Most apartment and gym pools need at least weekly service, and heavily used pools often need more. We'll recommend a schedule based on your property's actual usage, not a one-size-fits-all plan." },
+    },
+    {
+      "@type": "Question",
+      name: "Do you handle repairs on commercial pools?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. The same repair work we do residentially, cracks, plumbing, equipment, we do for commercial properties, with scheduling that minimizes downtime for your residents or guests." },
+    },
+  ],
+};
 ---
 
 <Layout
   title="Commercial pool service in Los Angeles | GK Swimming Pools"
   description="Commercial pool service for apartments, hotels, and gyms across Los Angeles. Licensed, reliable, with detailed email reports. Call (818) 804-8204."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- HERO -->
   <section class="hero">
