@@ -27,7 +27,7 @@ const businessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
   name: "GK Swimming Pools",
-  image: "https://www.gkswimmingpools.com/images/logo-white.png",
+  image: "https://www.gkswimmingpools.com/images/logo-white.webp",
   url: "https://www.gkswimmingpools.com",
   telephone: "+18188048204",
   email: "admin@GKswimmingpools.com",
@@ -125,13 +125,13 @@ const serviceSchema = serviceName
     <meta name="description" content={description} />
     <meta name="google-site-verification" content="OS_h77ISBhBeBhClgRZf0jAvgkQQiJKcIogQuYtNgwg" />
 
-    <!-- Preconnect + non-render-blocking font load. Was a CSS @import,
-         which chains: page CSS -> Google Fonts CSS -> font files. This
-         collapses that chain and lets the browser start the connection
-         to Google's font servers immediately. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" />
+    <!-- Fonts are now self-hosted (public/fonts/) instead of loaded from
+         Google's servers — removes the cross-origin CSS+file chain entirely.
+         Preloading these two files (the only two we use) lets the browser
+         fetch them immediately, in parallel with everything else, instead
+         of discovering them late via a render-blocking stylesheet. -->
+    <link rel="preload" href="/fonts/fraunces-latin-variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-latin-variable.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- Google tag (gtag.js) — one shared loader for both GA4 and Google Ads.
          is:inline is intentional here: Google's own instructions require this
@@ -199,7 +199,7 @@ const serviceSchema = serviceName
     <nav class="nav">
       <div class="nav__inner">
         <a href="/" class="nav__logo">
-          <img src="/images/logo-white.png" alt="GK Swimming Pools" class="nav__logo-img" width="192" height="154" />
+          <img src="/images/logo-white.webp" alt="GK Swimming Pools" class="nav__logo-img" width="192" height="154" />
         </a>
 
         <ul class="nav__links">
@@ -277,7 +277,7 @@ const serviceSchema = serviceName
       <div class="container">
         <div class="footer__grid">
           <div>
-            <img src="/images/logo-white.png" alt="GK Swimming Pools" class="footer__logo" width="192" height="154" />
+            <img src="/images/logo-white.webp" alt="GK Swimming Pools" class="footer__logo" width="192" height="154" />
             <p class="footer__tagline">Three generations of honest pool service across Los Angeles. Fair pricing, proactive care, and a commitment to treating every pool like our own.</p>
             <a href="tel:8188048204" class="footer__phone">(818) 804-8204</a>
           </div>

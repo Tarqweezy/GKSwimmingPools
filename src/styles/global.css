@@ -3,6 +3,26 @@
    Fraunces (warm serif) carries the legacy/family story in headlines.
    Inter (clean sans) carries everyday reading in body copy. */
 
+/* Self-hosted fonts (previously loaded from Google Fonts — moved local to
+   remove the render-blocking cross-origin chain: our CSS -> Google's CSS ->
+   Google's font files. Same two font families, same weights, just served
+   same-origin so the browser doesn't have to leave gkswimmingpools.com. */
+@font-face {
+  font-family: 'Fraunces Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/fonts/fraunces-latin-variable.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/fonts/inter-latin-variable.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
 
 /* --- Token System --- */
 :root {
@@ -24,8 +44,8 @@
   --color-gold:       #d9a441;
 
   /* Type */
-  --font-display: 'Fraunces', serif;
-  --font-body:    'Inter', sans-serif;
+  --font-display: 'Fraunces Variable', serif;
+  --font-body:    'Inter Variable', sans-serif;
 
   /* Scale */
   --text-xs:   0.75rem;
