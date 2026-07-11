@@ -125,6 +125,14 @@ const serviceSchema = serviceName
     <meta name="description" content={description} />
     <meta name="google-site-verification" content="OS_h77ISBhBeBhClgRZf0jAvgkQQiJKcIogQuYtNgwg" />
 
+    <!-- Preconnect + non-render-blocking font load. Was a CSS @import,
+         which chains: page CSS -> Google Fonts CSS -> font files. This
+         collapses that chain and lets the browser start the connection
+         to Google's font servers immediately. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" />
+
     <!-- Google tag (gtag.js) — one shared loader for both GA4 and Google Ads.
          is:inline is intentional here: Google's own instructions require this
          literally inline in <head> on every page, and gtag/dataLayer need to
@@ -191,7 +199,7 @@ const serviceSchema = serviceName
     <nav class="nav">
       <div class="nav__inner">
         <a href="/" class="nav__logo">
-          <img src="/images/logo-white.png" alt="GK Swimming Pools" class="nav__logo-img" />
+          <img src="/images/logo-white.png" alt="GK Swimming Pools" class="nav__logo-img" width="192" height="154" />
         </a>
 
         <ul class="nav__links">
@@ -269,12 +277,12 @@ const serviceSchema = serviceName
       <div class="container">
         <div class="footer__grid">
           <div>
-            <img src="/images/logo-white.png" alt="GK Swimming Pools" class="footer__logo" />
+            <img src="/images/logo-white.png" alt="GK Swimming Pools" class="footer__logo" width="192" height="154" />
             <p class="footer__tagline">Three generations of honest pool service across Los Angeles. Fair pricing, proactive care, and a commitment to treating every pool like our own.</p>
             <a href="tel:8188048204" class="footer__phone">(818) 804-8204</a>
           </div>
           <div>
-            <h4>Services</h4>
+            <h3>Services</h3>
             <ul>
               <li><a href="/services/pool-maintenance">Pool Maintenance</a></li>
               <li><a href="/services/pool-inspections">Pool Inspections</a></li>
@@ -285,13 +293,13 @@ const serviceSchema = serviceName
             </ul>
           </div>
           <div>
-            <h4>Company</h4>
+            <h3>Company</h3>
             <ul>
               <li><a href="/our-story">Our Story</a></li>
               <li><a href="/contact">Contact</a></li>
               <li><a href="/blog">Blog</a></li>
             </ul>
-            <h4 style="margin-top: var(--space-6);">Service Areas</h4>
+            <h3 style="margin-top: var(--space-6);">Service Areas</h3>
             <ul>
               <li><a href="/locations/pool-service-santa-clarita">Santa Clarita</a></li>
               <li><a href="/locations/pool-service-valencia">Valencia</a></li>
