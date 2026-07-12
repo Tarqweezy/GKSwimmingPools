@@ -122,8 +122,8 @@ const pageAreaServed = [city, ...nearbyAreas];
         <div class="why-grid">
           {callouts.map((c, i) => (
             <div class="why-item">
-              <div class="why-item__num" style="font-size: 2rem;">{c.icon}</div>
-              <h4>{c.title}</h4>
+              <div class="why-item__num" style="font-size: 2rem;" aria-hidden="true">{c.icon}</div>
+              <h3>{c.title}</h3>
               <p>{c.body}</p>
             </div>
           ))}

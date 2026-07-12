@@ -107,7 +107,6 @@ h1, h2, h3, h4 {
 h1 { font-size: var(--text-5xl); }
 h2 { font-size: var(--text-3xl); }
 h3 { font-size: var(--text-2xl); }
-h4 { font-size: var(--text-xl); }
 
 p { max-width: 68ch; }
 .lead { font-size: var(--text-lg); color: var(--color-slate); line-height: 1.7; }
@@ -668,7 +667,7 @@ p { max-width: 68ch; }
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-aqua-dark);
+  color: var(--color-deep);
   display: block;
   margin-bottom: var(--space-3);
 }
@@ -733,7 +732,7 @@ p { max-width: 68ch; }
   opacity: 0.45;
   line-height: 1;
 }
-.why-item h4 { margin-top: var(--space-2); margin-bottom: var(--space-3); color: var(--color-white); }
+.why-item h3 { font-size: var(--text-xl); margin-top: var(--space-2); margin-bottom: var(--space-3); color: var(--color-white); }
 .why-item p { font-size: var(--text-sm); color: rgba(255,255,255,0.8); max-width: none; }
 
 /* --- FAQs --- */
@@ -837,17 +836,25 @@ p { max-width: 68ch; }
   transition: border-color 0.2s, background 0.2s;
 }
 .testimonials__btn:hover { border-color: var(--color-aqua); background: rgba(92,225,230,0.15); }
-.testimonials__dots { display: flex; gap: var(--space-2); }
+.testimonials__dots { display: flex; gap: var(--space-1); }
 .testimonials__dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.3);
+  width: 44px; height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
   cursor: pointer;
   border: none;
   padding: 0;
+}
+.testimonials__dot::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
   transition: background 0.2s, transform 0.2s;
 }
-.testimonials__dot.active { background: var(--color-aqua); transform: scale(1.3); }
+.testimonials__dot.active::before { background: var(--color-aqua); transform: scale(1.3); }
 
 /* --- CTA Band --- */
 .cta-band {
@@ -925,7 +932,7 @@ p { max-width: 68ch; }
   color: var(--color-aqua);
   margin-top: var(--space-4);
 }
-.footer h4 {
+.footer h3 {
   font-family: var(--font-body);
   font-size: var(--text-sm);
   font-weight: 600;
