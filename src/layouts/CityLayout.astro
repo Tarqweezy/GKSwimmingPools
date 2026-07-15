@@ -1,6 +1,8 @@
 ---
 import Layout from './Layout.astro';
 import ContactForm from '../components/ContactForm.astro';
+import FAQSection from '../components/FAQSection.astro';
+import { getCityFAQs } from '../data/faq-data.js';
 
 interface Props {
   city: string;
@@ -160,6 +162,8 @@ const pageAreaServed = [city, ...nearbyAreas];
       </div>
     </div>
   </section>
+
+  <FAQSection faqs={getCityFAQs(city)} heading={`Pool Service FAQs — ${city}`} />
 
   <!-- CTA BAND -->
   <div class="cta-band">

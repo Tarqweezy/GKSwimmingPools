@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import { poolCleaningFAQs } from '../../data/faq-data.js';
 ---
 
 <Layout
@@ -121,6 +123,8 @@ import ContactForm from '../../components/ContactForm.astro';
       </div>
     </div>
   </section>
+
+  <FAQSection faqs={poolCleaningFAQs} heading="Pool Maintenance FAQs" />
 
   <!-- CTA BAND -->
   <div class="cta-band">
