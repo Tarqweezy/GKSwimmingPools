@@ -1,0 +1,1148 @@
+---
+// src/pages/remodel-quote.astro
+// Dedicated ad landing page — point Google Ads here, NOT at /services/pool-remodeling
+// IMPORTANT: Replace YOUR_WEB3FORMS_KEY below with the same key from your ContactForm.astro
+
+const WEB3FORMS_KEY = "YOUR_WEB3FORMS_KEY"; // ← swap this
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Pool Remodel Estimate | GK Swimming Pools</title>
+  <meta name="description" content="Get a free pool remodeling estimate in 60 seconds. Replastering, Pebble Tec, and full remodels. Serving Santa Clarita and the San Fernando Valley. Financing available." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://www.gkswimmingpools.com/remodel-quote" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #084184;
+      --blue-dark: #062d5c;
+      --aqua: #5CE1E6;
+      --white: #ffffff;
+      --mist: #f0f8ff;
+      --border: #dce8f5;
+      --muted: #5a6a7a;
+      --text: #1a2a3a;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Lato", sans-serif; background: var(--white); color: var(--text); line-height: 1.7; }
+
+    /* ── HEADER ── */
+    .lp-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--blue);
+      padding: 0.9rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+    .lp-logo-wrap { display: flex; align-items: center; text-decoration: none; }
+    .lp-logo-wrap img { height: 42px; width: auto; display: block; }
+    .lp-header__right { display: flex; align-items: center; gap: 2rem; }
+    .lp-nav { display: flex; align-items: center; gap: 1.75rem; }
+    .lp-nav a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .lp-nav a:hover { color: var(--aqua); }
+    .lp-phone {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--aqua);
+      color: var(--blue);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 3px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 4.5rem 2rem 3.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(8,65,132,0.88) 0%, rgba(8,65,132,0.72) 100%);
+      z-index: 1;
+    }
+    .hero__content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--aqua);
+      background: rgba(92,225,230,0.12);
+      border: 1px solid rgba(92,225,230,0.3);
+      padding: 0.35rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.12;
+      max-width: 700px;
+      margin: 0 auto 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 span { color: var(--aqua); }
+    .hero p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.1rem;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--aqua);
+      color: var(--blue);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .hero-cta:hover { opacity: 0.88; }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--blue-dark);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .trust-item svg { color: var(--aqua); flex-shrink: 0; }
+
+    /* ── SECTION WRAPPER ── */
+    .section { padding: 4rem 2rem; }
+    .section--mist { background: var(--mist); }
+    .container { max-width: 1060px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 2.5rem; }
+    .eyebrow {
+      display: inline-block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--aqua);
+      background: var(--blue);
+      padding: 0.3rem 0.85rem;
+      border-radius: 2px;
+      margin-bottom: 0.85rem;
+    }
+    .section-header h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .section-header p { color: var(--muted); max-width: 520px; margin: 0 auto; }
+
+    /* ── SERVICES CARDS ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-top: 3px solid var(--aqua);
+      border-radius: 5px;
+      padding: 2rem;
+    }
+    .service-card__icon {
+      width: 44px;
+      height: 44px;
+      background: var(--mist);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--blue);
+    }
+    .service-card h3 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.6rem;
+    }
+    .service-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 0.75rem; }
+    .service-card .price-range {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--blue);
+      background: var(--mist);
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    /* ── MULTI-STEP FORM ── */
+    .form-section {
+      background: var(--blue);
+      padding: 4rem 2rem;
+    }
+    .form-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .form-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .form-header .eyebrow { background: rgba(92,225,230,0.15); color: var(--aqua); }
+    .form-header h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .form-header p { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+
+    /* Progress bar */
+    .form-progress {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+    .progress-step {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      transition: all 0.3s;
+    }
+    .progress-step.active {
+      background: var(--aqua);
+      border-color: var(--aqua);
+      color: var(--blue);
+    }
+    .progress-step.done {
+      background: rgba(92,225,230,0.25);
+      border-color: var(--aqua);
+      color: var(--aqua);
+    }
+    .progress-line {
+      flex: 1;
+      max-width: 48px;
+      height: 2px;
+      background: rgba(255,255,255,0.15);
+      transition: background 0.3s;
+    }
+    .progress-line.done { background: var(--aqua); }
+
+    /* Form card */
+    .form-card {
+      background: var(--white);
+      border-radius: 6px;
+      padding: 2rem;
+    }
+    .form-step { display: none; }
+    .form-step.active { display: block; }
+
+    .step-label {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--aqua);
+      margin-bottom: 0.5rem;
+    }
+    .step-question {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--blue);
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    /* Option buttons (steps 1 and 2) */
+    .option-grid {
+      display: grid;
+      gap: 0.75rem;
+    }
+    .option-grid--3 { grid-template-columns: 1fr; }
+    .option-grid--4 { grid-template-columns: 1fr 1fr; }
+    .option-btn {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      border: 1.5px solid var(--border);
+      border-radius: 5px;
+      background: var(--white);
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 0.2s, background 0.2s;
+      width: 100%;
+    }
+    .option-btn:hover { border-color: var(--aqua); background: var(--mist); }
+    .option-btn.selected { border-color: var(--blue); background: var(--mist); }
+    .option-btn__icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: var(--mist);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .option-btn__text strong {
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--blue);
+      margin-bottom: 0.15rem;
+    }
+    .option-btn__text span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* Text inputs (steps 3 and 4) */
+    .form-field { margin-bottom: 1.25rem; }
+    .form-field label {
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: var(--blue);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .form-field input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 4px;
+      font-family: "Lato", sans-serif;
+      font-size: 1rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-field input:focus { border-color: var(--blue); }
+
+    /* Navigation buttons */
+    .form-nav {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-back {
+      background: none;
+      border: 1.5px solid var(--border);
+      color: var(--muted);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.25rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-back:hover { border-color: var(--blue); color: var(--blue); }
+    .btn-next {
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.9rem 2rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.2s;
+      flex: 1;
+    }
+    .btn-next:hover { background: #0a5299; }
+    .btn-submit {
+      background: var(--aqua);
+      color: var(--blue);
+      border: none;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border-radius: 3px;
+      cursor: pointer;
+      flex: 1;
+      transition: opacity 0.2s;
+    }
+    .btn-submit:hover { opacity: 0.88; }
+
+    /* Success screen */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .form-success.active { display: block; }
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--mist);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      color: var(--blue);
+    }
+    .form-success h3 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .form-success p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
+    .estimate-range {
+      background: var(--mist);
+      border: 1.5px solid var(--border);
+      border-top: 3px solid var(--aqua);
+      border-radius: 4px;
+      padding: 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .estimate-range .range-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+    .estimate-range .range-value {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--blue);
+    }
+    .estimate-range .range-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    /* ── PROCESS ── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      counter-reset: steps;
+    }
+    .process-step {
+      text-align: center;
+      counter-increment: steps;
+    }
+    .process-step__num {
+      width: 52px;
+      height: 52px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--aqua);
+      margin: 0 auto 1rem;
+    }
+    .process-step h3 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.5rem;
+    }
+    .process-step p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── REVIEWS ── */
+    .reviews-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .review-badge {
+      text-align: center;
+    }
+    .review-badge__stars { color: #f59e0b; font-size: 1.4rem; letter-spacing: 0.05em; }
+    .review-badge__score {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 2.5rem;
+      color: var(--blue);
+      line-height: 1;
+      margin: 0.25rem 0;
+    }
+    .review-badge__label { font-size: 0.8rem; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* ── FINANCING ── */
+    .financing-block {
+      background: var(--blue);
+      border-radius: 6px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .financing-block h3 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.75rem;
+    }
+    .financing-block p { color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .btn-aqua {
+      display: inline-block;
+      background: var(--aqua);
+      color: var(--blue);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.9rem 2rem;
+      border-radius: 3px;
+      text-decoration: none;
+    }
+
+    /* ── FOOTER ── */
+    .site-footer { background: var(--blue-dark); }
+    .site-footer__top { padding: 4rem 2rem 3rem; }
+    .site-footer__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+    .site-footer__brand p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      max-width: 280px;
+    }
+    .site-footer__phone {
+      color: var(--aqua);
+      text-decoration: none;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .site-footer__col-title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .site-footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .site-footer__col ul li a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .site-footer__col ul li a:hover { color: var(--aqua); }
+    .site-footer__bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 1.25rem 2rem;
+      text-align: center;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.75rem;
+    }
+    @media (max-width: 768px) {
+      .site-footer__grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .site-footer__brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 480px) {
+      .site-footer__grid { grid-template-columns: 1fr; }
+      .lp-nav { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .lp-header { padding: 0.75rem 1.25rem; }
+      .hero { padding: 3rem 1.25rem 2.5rem; }
+      .trust-bar { gap: 1rem; padding: 0.75rem 1rem; }
+      .trust-item span { font-size: 0.72rem; }
+      .option-grid--4 { grid-template-columns: 1fr; }
+      .section { padding: 3rem 1.25rem; }
+      .form-section { padding: 3rem 1.25rem; }
+      .form-card { padding: 1.5rem; }
+      .reviews-row { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="lp-header">
+  <a href="/" class="lp-logo-wrap">
+    <img src="/images/logo-white.png" alt="GK Swimming Pools" height="42" />
+  </a>
+  <div class="lp-header__right">
+    <nav class="lp-nav" aria-label="Main navigation">
+      <a href="/services/pool-remodeling">Pool Remodeling</a>
+      <a href="/our-story">Our Story</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <a href="tel:8188048204" class="lp-phone">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+      (818) 804-8204
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg">
+    <img src="/images/remodeling/pool-mosaic-tile-remodel-santa-clarita.webp" alt="Custom mosaic pool tile remodel in Santa Clarita" fetchpriority="high" decoding="async" width="1400" height="933" />
+  </div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+  <div class="hero-eyebrow">Free Estimate &mdash; No Obligation</div>
+  <h1>Give Your Pool the <span>Remodel</span> It Deserves</h1>
+  <p>Replastering, Pebble Tec, and full pool remodels. Serving Santa Clarita and the San Fernando Valley. Financing available.</p>
+  <a href="#get-quote" class="hero-cta">Get My Free Estimate &darr;</a>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <span>Licensed &amp; Insured</span>
+  </div>
+  <div class="trust-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    <span>Free On-Site Estimate</span>
+  </div>
+  <div class="trust-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+    <span>Financing Available</span>
+  </div>
+  <div class="trust-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    <span>5.0 Google Rating</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">What We Do</span>
+      <h2>Pool Remodeling Services</h2>
+      <p>From a fresh plaster coat to a complete transformation — we handle every level of pool remodel.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3>Pool Replastering</h3>
+        <p>Restore your pool's surface to like-new condition. Smooth out rough spots, eliminate staining, and stop slow leaks caused by aging plaster.</p>
+        <span class="price-range">Starting at $4,500</span>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>Pebble Tec &amp; Premium Finishes</h3>
+        <p>Upgrade to a premium pebble or quartz finish that lasts 20+ years and gives your pool a resort-quality look. Multiple colors and textures available.</p>
+        <span class="price-range">Starting at $8,000</span>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        </div>
+        <h3>Pool Retiling</h3>
+        <p>Refresh your pool's waterline tile or resurface the full interior. Fix cracked and stained tile and give your pool a clean, updated look.</p>
+        <span class="price-range">Starting at $2,500</span>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Full Pool Remodel</h3>
+        <p>Complete transformation — new surface, updated coping, tile work, and equipment upgrades. Turn an outdated pool into the backyard centerpiece it should be.</p>
+        <span class="price-range">Starting at $15,000</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MULTI-STEP FORM -->
+<section class="form-section" id="get-quote">
+  <div class="form-wrap">
+    <div class="form-header">
+      <span class="eyebrow">Takes 60 Seconds</span>
+      <h2>Get Your Free Estimate</h2>
+      <p>Answer 4 quick questions and we'll be in touch within 24 hours with your quote.</p>
+    </div>
+
+    <!-- Progress -->
+    <div class="form-progress" id="formProgress">
+      <div class="progress-step active" id="ps1">1</div>
+      <div class="progress-line" id="pl1"></div>
+      <div class="progress-step" id="ps2">2</div>
+      <div class="progress-line" id="pl2"></div>
+      <div class="progress-step" id="ps3">3</div>
+      <div class="progress-line" id="pl3"></div>
+      <div class="progress-step" id="ps4">4</div>
+    </div>
+
+    <div class="form-card">
+      <!-- STEP 1 -->
+      <div class="form-step active" id="step1">
+        <div class="step-label">Step 1 of 4</div>
+        <div class="step-question">What type of service are you looking for?</div>
+        <div class="option-grid option-grid--4">
+          <button class="option-btn" data-step="1" data-value="Pool Replastering" onclick="selectOption(this, 1)">
+            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <div class="option-btn__text">
+              <strong>Pool Replastering</strong>
+              <span>Restore existing plaster surface</span>
+            </div>
+          </button>
+          <button class="option-btn" data-step="1" data-value="Pebble Tec / Premium Finish" onclick="selectOption(this, 1)">
+            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <div class="option-btn__text">
+              <strong>Pebble Tec / Premium Finish</strong>
+              <span>Upgrade to long-lasting pebble or quartz</span>
+            </div>
+          </button>
+          <button class="option-btn" data-step="1" data-value="Pool Retiling" onclick="selectOption(this, 1)">
+            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+            <div class="option-btn__text">
+              <strong>Pool Retiling</strong>
+              <span>Waterline or full interior tile</span>
+            </div>
+          </button>
+          <button class="option-btn" data-step="1" data-value="Full Pool Remodel" onclick="selectOption(this, 1)">
+            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+            <div class="option-btn__text">
+              <strong>Full Pool Remodel</strong>
+              <span>Complete transformation</span>
+            </div>
+          </button>
+        </div>
+        <div class="form-nav" style="justify-content: flex-end">
+          <button class="btn-next" onclick="nextStep(1)">Next &rarr;</button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-step" id="step2">
+        <div class="step-label">Step 2 of 4</div>
+        <div class="step-question">How big is your pool?</div>
+        <div class="option-grid option-grid--4">
+          <button class="option-btn" data-step="2" data-value="Small (under 400 sq ft)" onclick="selectOption(this, 2)">
+            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/></svg></div>
+            <div class="option-btn__text">
+              <strong>Small</strong>
+              <span>Under 400 sq ft</span>
+            </div>
+          </button>
+          <button class="option-btn" data-step="2" data-value="Medium (400–600 sq ft)" onclick="selectOption(this, 2)">
+            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/></svg></div>
+            <div class="option-btn__text">
+              <strong>Medium</strong>
+              <span>400 – 600 sq ft</span>
+            </div>
+          </button>
+          <button class="option-btn" data-step="2" data-value="Large (600+ sq ft)" onclick="selectOption(this, 2)">
+            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s2-4 5-4 5 4 5 4 2-4 5-4 5 4 5 4"/><path d="M2 18s2-4 5-4 5 4 5 4 2-4 5-4 5 4 5 4"/></svg></div>
+            <div class="option-btn__text">
+              <strong>Large</strong>
+              <span>600+ sq ft</span>
+            </div>
+          </button>
+          <button class="option-btn" data-step="2" data-value="Not Sure" onclick="selectOption(this, 2)">
+            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+            <div class="option-btn__text">
+              <strong>Not Sure</strong>
+              <span>We'll measure on-site</span>
+            </div>
+          </button>
+        </div>
+        <div class="form-nav">
+          <button class="btn-back" onclick="prevStep(2)">&larr; Back</button>
+          <button class="btn-next" onclick="nextStep(2)">Next &rarr;</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="form-step" id="step3">
+        <div class="step-label">Step 3 of 4</div>
+        <div class="step-question">Where is your pool located?</div>
+        <div class="form-field">
+          <label for="address">Property Address</label>
+          <input type="text" id="address" placeholder="123 Main St, Santa Clarita, CA" autocomplete="street-address" />
+        </div>
+        <div class="form-nav">
+          <button class="btn-back" onclick="prevStep(3)">&larr; Back</button>
+          <button class="btn-next" onclick="nextStep(3)">Next &rarr;</button>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="form-step" id="step4">
+        <div class="step-label">Step 4 of 4</div>
+        <div class="step-question">Almost done — how can we reach you?</div>
+        <div class="form-field">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="John Smith" autocomplete="name" />
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="(818) 555-0100" autocomplete="tel" />
+        </div>
+        <div class="form-nav">
+          <button class="btn-back" onclick="prevStep(4)">&larr; Back</button>
+          <button class="btn-submit" onclick="submitForm()">Get My Free Estimate ✓</button>
+        </div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>You're All Set!</h3>
+        <p>We received your request and will call you within 24 hours to schedule your free on-site assessment.</p>
+        <div class="estimate-range">
+          <div class="range-label">Your Estimated Range</div>
+          <div class="range-value" id="estimateValue">$4,500 – $40,000</div>
+          <div class="range-note">Final quote provided after free on-site visit. No obligation.</div>
+        </div>
+        <p>Questions in the meantime? Call us directly.</p>
+        <a href="tel:8188048204" class="btn-aqua">(818) 804-8204</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section section--mist">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">What to Expect</span>
+      <h2>Our Simple 4-Step Process</h2>
+      <p>No surprises. Here's exactly what happens after you submit your estimate request.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-step__num">1</div>
+        <h3>Submit Your Request</h3>
+        <p>Fill out the form above in 60 seconds. Tell us your service type, pool size, and contact info.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">2</div>
+        <h3>We Call Within 24 Hours</h3>
+        <p>A GK specialist calls you to answer questions and schedule your free on-site visit at a time that works for you.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">3</div>
+        <h3>Free On-Site Assessment</h3>
+        <p>We visit your property, assess your pool, and give you a detailed written quote. No obligation, no pressure.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">4</div>
+        <h3>Your Pool Gets Transformed</h3>
+        <p>Once you approve the plan, we get to work. Most remodels are completed within 5 to 14 days depending on scope.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Social Proof</span>
+      <h2>What Homeowners Say</h2>
+    </div>
+    <div class="reviews-row">
+      <div class="review-badge">
+        <div class="review-badge__stars">★★★★★</div>
+        <div class="review-badge__score">5.0</div>
+        <div class="review-badge__label">Google Rating</div>
+      </div>
+      <div style="max-width:480px; color: var(--muted); font-size: 0.95rem; line-height: 1.75; font-style: italic;">
+        "GK Swimming Pools did an incredible job on our replaster. The process was smooth, the team was professional, and our pool looks brand new. Highly recommend to anyone in the Santa Clarita area."
+        <div style="margin-top: 0.75rem; font-style: normal; font-weight: 700; color: var(--blue); font-size: 0.82rem;">— Verified Google Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCING -->
+<section class="section section--mist">
+  <div class="container">
+    <div class="financing-block">
+      <h3>Don't Let Budget Hold You Back</h3>
+      <p>We work with a trusted third-party lender to offer flexible financing options so you can get the pool you want without waiting. Ask us about financing when we call.</p>
+      <a href="#get-quote" class="btn-aqua">Get My Free Estimate</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer__top">
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <img src="/images/logo-white.png" alt="GK Swimming Pools" height="48" style="margin-bottom:1rem;" />
+        <p>Three generations of honest pool service across Los Angeles. Fair pricing, proactive care, and a commitment to treating every pool like our own.</p>
+        <a href="tel:8188048204" class="site-footer__phone">(818) 804-8204</a>
+      </div>
+      <div class="site-footer__col">
+        <div class="site-footer__col-title">Services</div>
+        <ul>
+          <li><a href="/services/pool-maintenance">Pool Maintenance</a></li>
+          <li><a href="/services/pool-inspections">Pool Inspections</a></li>
+          <li><a href="/services/pool-repairs">Pool Repairs</a></li>
+          <li><a href="/services/pool-remodeling">Pool Remodeling</a></li>
+          <li><a href="/services/jacuzzi-service">Jacuzzi Service</a></li>
+          <li><a href="/services/commercial-pool-services">Commercial Pool Service</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <div class="site-footer__col-title">Company</div>
+        <ul>
+          <li><a href="/our-story">Our Story</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <div class="site-footer__col-title">Service Areas</div>
+        <ul>
+          <li><a href="/locations/pool-service-santa-clarita">Santa Clarita</a></li>
+          <li><a href="/locations/pool-service-valencia">Valencia</a></li>
+          <li><a href="/locations/pool-service-granada-hills">Granada Hills</a></li>
+          <li><a href="/locations/pool-service-northridge">Northridge</a></li>
+          <li><a href="/locations/pool-service-encino">Encino</a></li>
+          <li><a href="/locations/pool-service-woodland-hills">Woodland Hills</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <div class="container">
+      &copy; 2026 GK Swimming Pools. All rights reserved. | Santa Clarita, CA | (818) 804-8204
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Form state
+  const formData = {
+    service: "",
+    poolSize: "",
+    address: "",
+    name: "",
+    phone: ""
+  };
+
+  // Estimate ranges by service + size
+  const estimates = {
+    "Pool Replastering": { "Small (under 400 sq ft)": "$4,500 – $7,000", "Medium (400–600 sq ft)": "$6,000 – $9,000", "Large (600+ sq ft)": "$9,000 – $14,000", "Not Sure": "$4,500 – $14,000" },
+    "Pebble Tec / Premium Finish": { "Small (under 400 sq ft)": "$8,000 – $11,000", "Medium (400–600 sq ft)": "$10,000 – $14,000", "Large (600+ sq ft)": "$13,000 – $18,000", "Not Sure": "$8,000 – $18,000" },
+    "Pool Retiling": { "Small (under 400 sq ft)": "$2,500 – $4,500", "Medium (400–600 sq ft)": "$4,000 – $7,000", "Large (600+ sq ft)": "$6,000 – $10,000", "Not Sure": "$2,500 – $10,000" },
+    "Full Pool Remodel": { "Small (under 400 sq ft)": "$15,000 – $22,000", "Medium (400–600 sq ft)": "$20,000 – $30,000", "Large (600+ sq ft)": "$28,000 – $40,000", "Not Sure": "$15,000 – $40,000" }
+  };
+
+  function selectOption(btn, step) {
+    // Deselect siblings
+    btn.closest(".option-grid").querySelectorAll(".option-btn").forEach(b => b.classList.remove("selected"));
+    btn.classList.add("selected");
+    // Store value
+    if (step === 1) formData.service = btn.dataset.value;
+    if (step === 2) formData.poolSize = btn.dataset.value;
+  }
+
+  function updateProgress(currentStep) {
+    for (let i = 1; i <= 4; i++) {
+      const dot = document.getElementById("ps" + i);
+      if (i < currentStep) { dot.className = "progress-step done"; dot.innerHTML = "✓"; }
+      else if (i === currentStep) { dot.className = "progress-step active"; dot.innerHTML = i; }
+      else { dot.className = "progress-step"; dot.innerHTML = i; }
+      if (i < 4) {
+        const line = document.getElementById("pl" + i);
+        line.className = i < currentStep ? "progress-line done" : "progress-line";
+      }
+    }
+  }
+
+  function nextStep(current) {
+    // Validate
+    if (current === 1 && !formData.service) { alert("Please select a service type."); return; }
+    if (current === 2 && !formData.poolSize) { alert("Please select a pool size."); return; }
+    if (current === 3 && !document.getElementById("address").value.trim()) { alert("Please enter your address."); return; }
+
+    if (current === 3) formData.address = document.getElementById("address").value.trim();
+
+    document.getElementById("step" + current).classList.remove("active");
+    document.getElementById("step" + (current + 1)).classList.add("active");
+    updateProgress(current + 1);
+  }
+
+  function prevStep(current) {
+    document.getElementById("step" + current).classList.remove("active");
+    document.getElementById("step" + (current - 1)).classList.add("active");
+    updateProgress(current - 1);
+  }
+
+  async function submitForm() {
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    if (!name) { alert("Please enter your name."); return; }
+    if (!phone) { alert("Please enter your phone number."); return; }
+    formData.name = name;
+    formData.phone = phone;
+
+    // Submit to Web3Forms
+    try {
+      await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "YOUR_WEB3FORMS_KEY",
+          subject: "New Pool Remodel Quote Request — GK Swimming Pools",
+          from_name: formData.name,
+          message: `
+Service: ${formData.service}
+Pool Size: ${formData.poolSize}
+Address: ${formData.address}
+Name: ${formData.name}
+Phone: ${formData.phone}
+          `.trim()
+        })
+      });
+    } catch(e) {
+      console.error("Submission error", e);
+    }
+
+    // Show success + estimate
+    document.getElementById("step4").classList.remove("active");
+    document.getElementById("formProgress").style.display = "none";
+    const range = (estimates[formData.service] || {})[formData.poolSize] || "$4,500 – $40,000";
+    document.getElementById("estimateValue").textContent = range;
+    document.getElementById("formSuccess").classList.add("active");
+  }
+</script>
+
+</body>
+</html>
