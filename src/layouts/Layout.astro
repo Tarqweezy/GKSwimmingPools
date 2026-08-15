@@ -22,7 +22,7 @@ const {
 } = Astro.props;
 const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site);
 
-// LocalBusiness schema — service-area business, no public street address by design.
+// LocalBusiness schema. service-area business, no public street address by design.
 const businessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
@@ -69,7 +69,7 @@ const pathname = Astro.url.pathname.replace(/\/$/, "");
 const segments = pathname.split("/").filter(Boolean);
 
 // BreadcrumbList: Home + current page (intermediate segments like /services
-// have no real page, so they're intentionally skipped — breadcrumb items
+// have no real page, so they're intentionally skipped. breadcrumb items
 // should only reference pages that actually exist).
 const humanize = (s: string) =>
   s.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
@@ -125,7 +125,7 @@ const serviceSchema = serviceName
     <meta name="description" content={description} />
     <meta name="google-site-verification" content="OS_h77ISBhBeBhClgRZf0jAvgkQQiJKcIogQuYtNgwg" />
 
-    <!-- Google tag (gtag.js) — one shared loader for both GA4 and Google Ads.
+    <!-- Google tag (gtag.js). one shared loader for both GA4 and Google Ads.
          is:inline is intentional here: Google's own instructions require this
          literally inline in <head> on every page, and gtag/dataLayer need to
          be true globals (not scoped to a bundled ES module) so other scripts
@@ -138,7 +138,7 @@ const serviceSchema = serviceName
       gtag('config', 'G-7QDN080XF0');   // Google Analytics 4
       gtag('config', 'AW-17308243497'); // Google Ads
 
-      // Shared conversion helper — takes the specific label for each action,
+      // Shared conversion helper. takes the specific label for each action,
       // avoids the name collision from pasting Google's two separate snippets
       // verbatim (both were named the same thing, which would silently break
       // one of them). event_timeout is a safety net: if the tracking beacon
@@ -161,7 +161,7 @@ const serviceSchema = serviceName
       }
 
       // Auto-attach call-conversion tracking to every phone link on every
-      // page (nav, footer, hero buttons, mobile menu, etc.) — no need to
+      // page (nav, footer, hero buttons, mobile menu, etc.). no need to
       // edit each one by hand across the site.
       document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
