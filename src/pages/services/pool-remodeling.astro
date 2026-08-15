@@ -6,94 +6,130 @@ import { poolReplasteringFAQs } from '../../data/faq-data.js';
 ---
 
 <Layout
-  title="Pool renovation in Santa Clarita | GK Swimming Pools"
-  description="Trusted pool contractor for swimming pool renovation across Santa Clarita and LA. Plaster, tile, decking, and full remodels. Free estimates: (818) 804-8204."
+  title="Pool Remodeling & Renovation in Santa Clarita | GK Swimming Pools"
+  description="Trusted pool remodeling contractor in Santa Clarita and the San Fernando Valley. Replastering, retiling, decking, and full renovations. Free estimates: (818) 804-8204."
 >
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero__bg">
       <img src="/images/services/pool-remodeling-hero.webp" alt="Remodeled swimming pool with new tile and spa feature" fetchpriority="high" decoding="async" />
     </div>
+    <div class="hero__overlay"></div>
     <div class="container hero__inner">
-      <h1 class="hero__h1">Pool Remodeling · Los Angeles</h1>
-      <p class="hero__offer">Swimming Pool Remodeling<br><em>in Los Angeles for 20+ Years</em></p>
-      <p class="hero__sub">Transform your backyard with expert pool renovations, from a fresh plaster coat to a complete pool and deck overhaul.</p>
+      <span class="hero__eyebrow">Pool Remodeling &middot; Los Angeles</span>
+      <h1>
+        <span class="hero__h1-white">Swimming Pool<br>Remodeling</span>
+        <span class="hero__h1-aqua">In Los Angeles For<br>20+ Years</span>
+      </h1>
+      <p class="hero__sub">Transform your backyard with expert pool renovations — from a fresh plaster coat to a complete pool and deck overhaul.</p>
       <div class="hero__actions">
-        <a href="/contact" class="btn btn--primary">Get a Price</a>
-        <a href="tel:8188048204" class="btn btn--outline">Call Us Today</a>
+        <a href="/remodel-quote" class="btn btn--primary">Get a Price</a>
+        <a href="tel:8188048204" class="btn btn--outline-white">Call Us Today</a>
       </div>
     </div>
   </section>
 
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar__inner">
+      <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>20+ Years Experience</span></div>
+      <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span>3 Generations Family Owned</span></div>
+      <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Licensed &amp; Insured</span></div>
+      <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><span>Financing Available</span></div>
+      <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>5.0 Google Rating</span></div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
   <section class="section">
     <div class="container">
-      <div style="max-width: 760px;">
-        <span class="eyebrow">Swimming Pool Renovations in LA</span>
-        <p class="lead" style="margin-bottom: 1.5rem;">
-          GK Swimming Pools specializes in expert swimming pool renovations and spa remodeling services across Los Angeles. Whether you're looking to update your pool's appearance, upgrade equipment, or completely transform your backyard, our certified team delivers high-quality results.
-        </p>
-        <p style="color: var(--color-muted);">
-          We proudly serve homeowners throughout West LA, Encino, Sherman Oaks, Brentwood, Pacific Palisades, Bel Air, Malibu, Marina Del Rey, and Beverly Hills. With over 20 years as one of the leading pool remodeling companies in LA, our licensed and insured team brings unmatched expertise to every project.
-        </p>
+      <div class="intro-wrap">
+        <div class="intro-text">
+          <span class="eyebrow">Pool Renovation Specialists</span>
+          <h2>Built to Last.<br>Designed to Impress.</h2>
+          <p>GK Swimming Pools specializes in swimming pool renovations and spa remodeling across Los Angeles and the Santa Clarita Valley. Whether you need a fresh plaster coat or a complete backyard transformation, our team handles every detail from start to finish.</p>
+          <p>We serve homeowners throughout Santa Clarita, the San Fernando Valley, Encino, Woodland Hills, Granada Hills, and surrounding communities. Over 20 years of experience, three generations of family craftsmanship.</p>
+          <a href="/remodel-quote" class="btn btn--primary" style="margin-top: var(--space-6)">Get a Free Estimate</a>
+        </div>
+        <div class="intro-stats">
+          <div class="stat-card"><div class="stat-card__num">20+</div><div class="stat-card__label">Years Serving LA</div></div>
+          <div class="stat-card"><div class="stat-card__num">3</div><div class="stat-card__label">Generations of Expertise</div></div>
+          <div class="stat-card"><div class="stat-card__num">5.0</div><div class="stat-card__label">&#9733; Google Rating</div></div>
+          <div class="stat-card"><div class="stat-card__num">12</div><div class="stat-card__label">Cities Served</div></div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- PHOTO GALLERY -->
   <section class="section section--alt">
     <div class="container">
       <div class="section-header">
-        <span class="eyebrow">What We Offer</span>
-        <h2>Our Pool Remodeling Services Include</h2>
+        <span class="eyebrow">Our Work</span>
+        <h2>The GK Team at Work</h2>
+        <p>Real replastering jobs across Santa Clarita and the San Fernando Valley — your pool is in the same hands.</p>
       </div>
-      <ul class="service-list">
-        <li>
-          <strong>Plaster Resurfacing</strong>
-          We apply fresh plaster to your pool or spa for a smooth, clean, and attractive new finish that completely transforms the look of your water.
-        </li>
-        <li>
-          <strong>Pool and Spa Structural Upgrades</strong>
-          Our team reinforces and upgrades the shell of your pool or spa, addressing any underlying issues while giving it a fresh, modernized look.
-        </li>
-        <li>
-          <strong>Re-plumbing and Pipe Upgrades</strong>
-          We replace outdated or inefficient plumbing lines to improve water flow, energy efficiency, and long-term reliability.
-        </li>
-        <li>
-          <strong>Tile and Waterline Tile Installation</strong>
-          A signature element of any pool renovation. We install new tile along the waterline or throughout the pool and spa for a beautiful, custom look.
-        </li>
-        <li>
-          <strong>Pool Deck Remodeling</strong>
-          We resurface and redesign pool and spa decks, transforming worn or outdated concrete into stunning new surfaces that elevate your entire outdoor space.
-        </li>
-        <li>
-          <strong>Lighting Upgrades</strong>
-          Our team installs modern LED and color lighting systems to enhance ambiance and make nighttime swimming an experience.
-        </li>
-        <li>
-          <strong>Skimmer and Equipment Upgrades</strong>
-          As part of a full pool remodel, we replace and upgrade skimmers, pumps, and filtration systems to improve performance and efficiency.
-        </li>
-        <li>
-          <strong>Filter and Circulation System Upgrades</strong>
-          We install new, high-efficiency filtration systems to keep your water crystal clear and reduce long-term maintenance demands.
-        </li>
-        <li>
-          <strong>Heater and Energy Efficiency Upgrades</strong>
-          Our team replaces older heaters with modern, energy-efficient systems so your pool stays warm while keeping operating costs down.
-        </li>
-        <li>
-          <strong>Spa Jets and Hydrotherapy System Installation</strong>
-          We design and install upgraded spa jet systems and hydrotherapy features as part of a comprehensive pool and spa remodeling project.
-        </li>
-        <li>
-          <strong>Automation and Smart System Integration</strong>
-          We integrate modern automation systems that let you control your pool lighting, temperature, and equipment from your phone.
-        </li>
-      </ul>
+      <div class="job-gallery">
+        <div class="job-gallery__main">
+          <img src="/images/remodeling/gk-pool-replastering-crew-1.webp" alt="GK Swimming Pools crew applying plaster during pool renovation in Santa Clarita" loading="lazy" decoding="async" width="1200" height="803" />
+        </div>
+        <div class="job-gallery__side">
+          <img src="/images/remodeling/gk-pool-replastering-crew-2.webp" alt="GK pool renovation team working on plaster application" loading="lazy" decoding="async" width="1200" height="803" />
+          <img src="/images/remodeling/gk-pool-replastering-crew-3.webp" alt="GK crew finishing pool plaster surface in Santa Clarita" loading="lazy" decoding="async" width="1200" height="803" />
+        </div>
+      </div>
+      <p class="gallery-caption">Every replastering project is staffed by our experienced crew and overseen by GK from day one to final fill.</p>
     </div>
   </section>
 
+  <!-- SERVICES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">What We Offer</span>
+        <h2>Our Pool Remodeling Services</h2>
+        <p>From the surface to the systems — we handle every part of the renovation.</p>
+      </div>
+      <div class="services-cards">
+        <div class="svc-card"><div class="svc-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Plaster Resurfacing</h3><p>Fresh plaster for a smooth, clean new finish that completely transforms your water. Starting at $4,500.</p></div>
+        <div class="svc-card"><div class="svc-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3>Pebble Tec &amp; Premium Finishes</h3><p>Durable pebble and quartz finishes lasting 15–20 years. Resort-quality look. Starting at $8,000.</p></div>
+        <div class="svc-card"><div class="svc-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div><h3>Tile &amp; Waterline Tile</h3><p>New tile along the waterline or throughout the pool and spa for a custom, polished look.</p></div>
+        <div class="svc-card"><div class="svc-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3>Pool Deck Remodeling</h3><p>Transform worn or outdated concrete decking into stunning outdoor spaces that match the new pool.</p></div>
+        <div class="svc-card"><div class="svc-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></div><h3>LED Lighting Upgrades</h3><p>Modern LED and color lighting systems that transform nighttime swimming into an experience.</p></div>
+        <div class="svc-card"><div class="svc-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Equipment &amp; Smart Systems</h3><p>Pump, filter, heater, and skimmer upgrades. Smart automation so you control everything from your phone.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">What Our Clients Say</span>
+        <h2>Real Results, Real Homeowners</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="tc tc--featured">
+          <div class="tc__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"They renovated my 20 year old swimming pool and turned it into a mini ocean oasis."</blockquote>
+          <div class="tc__author">Verified Google Review</div>
+        </div>
+        <div class="tc">
+          <div class="tc__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Best pool service in LA. They take pride in their work and it shows every single week."</blockquote>
+          <div class="tc__author">James, Granada Hills</div>
+        </div>
+        <div class="tc">
+          <div class="tc__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"On time. Professional. Can't recommend enough."</blockquote>
+          <div class="tc__author">Dan, Burbank</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY GK -->
   <section class="section">
     <div class="container">
       <div class="section-header">
@@ -101,40 +137,102 @@ import { poolReplasteringFAQs } from '../../data/faq-data.js';
         <h2>Why Choose GK Swimming Pools for Your Remodel?</h2>
       </div>
       <div class="why-grid">
-        <div class="why-item">
-          <div class="why-item__num" aria-hidden="true">01</div>
-          <h3>Experienced & Reliable</h3>
-          <p>With 20+ years as one of the most trusted pool remodeling companies in LA, we deliver professional service tailored to your vision.</p>
-        </div>
-        <div class="why-item">
-          <div class="why-item__num" aria-hidden="true">02</div>
-          <h3>Design Consultations</h3>
-          <p>Before any work begins, we walk you through detailed design options and provide clear project timelines so you know exactly what to expect.</p>
-        </div>
-        <div class="why-item">
-          <div class="why-item__num" aria-hidden="true">03</div>
-          <h3>Transparent Pricing</h3>
-          <p>We offer competitive, upfront pricing with no hidden fees, because quality pool renovations should be an exciting investment, not a stressful one.</p>
-        </div>
-        <div class="why-item">
-          <div class="why-item__num" aria-hidden="true">04</div>
-          <h3>Customer-Focused</h3>
-          <p>We are committed to clear communication and ensuring your complete satisfaction at every stage of the remodeling process.</p>
-        </div>
+        <div class="why-item"><div class="why-item__num">01</div><h3>Experienced &amp; Reliable</h3><p>With 20+ years as one of the most trusted pool remodeling companies in LA, we deliver professional service tailored to your vision.</p></div>
+        <div class="why-item"><div class="why-item__num">02</div><h3>Free Design Consultations</h3><p>Before any work begins, we walk you through detailed design options and provide clear project timelines.</p></div>
+        <div class="why-item"><div class="why-item__num">03</div><h3>Transparent Pricing</h3><p>Competitive, upfront pricing with no hidden fees. Quality pool renovations should be an exciting investment, not a stressful one.</p></div>
+        <div class="why-item"><div class="why-item__num">04</div><h3>Financing Available</h3><p>We work with a trusted third-party lender so budget doesn't have to stand between you and the pool you want.</p></div>
       </div>
     </div>
   </section>
 
-  <FAQSection faqs={poolReplasteringFAQs} heading="Pool Replastering FAQs" />
+  <FAQSection faqs={poolReplasteringFAQs} heading="Pool Remodeling FAQs" />
 
   <div class="cta-band">
     <div class="container">
       <h2>Ready to Transform Your Pool?</h2>
-      <p>Free design consultation. Transparent pricing. Call us or fill out the form to get started.</p>
-      <a href="tel:8188048204" class="btn btn--primary">(818) 804-8204</a>
+      <p>Free on-site estimate. Transparent pricing. Financing available. Serving Santa Clarita and the San Fernando Valley.</p>
+      <a href="/remodel-quote" class="btn btn--primary">Get My Free Estimate</a>
     </div>
   </div>
 
   <ContactForm />
 
 </Layout>
+
+<style>
+  /* HERO */
+  .hero { position: relative; min-height: 560px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .hero__bg { position: absolute; inset: 0; }
+  .hero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+  .hero__overlay { position: absolute; inset: 0; background: rgba(5,35,75,.55); }
+  .hero__inner { position: relative; z-index: 2; text-align: center; padding: var(--space-20) var(--space-8); width: 100%; }
+  .hero__eyebrow { font-family: var(--font-heading); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-aqua); display: block; margin-bottom: var(--space-6); }
+  .hero__h1-white { font-family: var(--font-heading); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.05; color: var(--color-white); font-size: clamp(2rem,5vw,3.8rem); display: block; }
+  .hero__h1-aqua { font-family: var(--font-heading); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.05; color: var(--color-aqua); font-size: clamp(2rem,5vw,3.8rem); display: block; margin-bottom: var(--space-8); }
+  .hero__sub { color: rgba(255,255,255,.82); font-size: var(--text-lg); max-width: 560px; margin: 0 auto var(--space-10); line-height: 1.75; }
+  .hero__actions { display: flex; gap: var(--space-4); flex-wrap: wrap; justify-content: center; }
+  .btn--outline-white { display: inline-block; border: 2px solid rgba(255,255,255,.7); color: var(--color-white); font-family: var(--font-heading); font-weight: 700; font-size: var(--text-sm); letter-spacing: 0.06em; text-transform: uppercase; padding: var(--space-4) var(--space-8); border-radius: var(--radius-sm); text-decoration: none; }
+
+  /* TRUST BAR */
+  .trust-bar { background: #05305f; padding: var(--space-4) var(--space-8); }
+  .trust-bar__inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: var(--space-10); flex-wrap: wrap; }
+  .trust-item { display: flex; align-items: center; gap: var(--space-2); color: rgba(255,255,255,.82); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
+  .trust-item svg { color: var(--color-aqua); flex-shrink: 0; }
+
+  /* INTRO */
+  .intro-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center; }
+  .intro-text h2 { margin-bottom: var(--space-6); }
+  .intro-text p { color: var(--color-muted); line-height: 1.8; margin-bottom: var(--space-4); }
+  .intro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+  .stat-card { background: var(--color-mist); border: 1.5px solid var(--color-border); border-top: 3px solid var(--color-aqua); border-radius: var(--radius-sm); padding: var(--space-6); text-align: center; }
+  .stat-card__num { font-family: var(--font-heading); font-weight: 800; font-size: 2.2rem; color: var(--color-deep); line-height: 1; margin-bottom: var(--space-2); }
+  .stat-card__label { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-muted); }
+
+  /* GALLERY */
+  .job-gallery { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-4); margin-bottom: var(--space-4); }
+  .job-gallery__main { min-width: 0; }
+  .job-gallery__main img { width: 100%; height: 400px; object-fit: cover; object-position: center top; border-radius: var(--radius-md); display: block; }
+  .job-gallery__side { display: flex; flex-direction: column; gap: var(--space-4); min-width: 0; }
+  .job-gallery__side img { width: 100%; flex: 1; object-fit: cover; object-position: center top; border-radius: var(--radius-md); display: block; min-height: 0; }
+  .gallery-caption { text-align: center; color: var(--color-muted); font-size: var(--text-sm); font-style: italic; }
+
+  /* SERVICE CARDS */
+  .services-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-6); }
+  .svc-card { background: var(--color-white); border: 1.5px solid var(--color-border); border-top: 3px solid var(--color-aqua); border-radius: var(--radius-sm); padding: var(--space-8); min-width: 0; }
+  .svc-card__icon { width: 46px; height: 46px; background: var(--color-mist); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-deep); margin-bottom: var(--space-4); }
+  .svc-card h3 { font-family: var(--font-heading); font-weight: 700; font-size: var(--text-sm); color: var(--color-deep); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: var(--space-3); }
+  .svc-card p { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.7; }
+
+  /* TESTIMONIALS */
+  .testimonials-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: var(--space-6); }
+  .tc { background: var(--color-white); border: 1.5px solid var(--color-border); border-radius: var(--radius-sm); padding: var(--space-8); display: flex; flex-direction: column; gap: var(--space-4); min-width: 0; }
+  .tc--featured { background: var(--color-deep); border-color: var(--color-deep); }
+  .tc--featured blockquote { color: var(--color-white) !important; }
+  .tc--featured .tc__author { color: var(--color-aqua) !important; }
+  .tc__stars { color: #f59e0b; font-size: 1.1rem; letter-spacing: 0.05em; }
+  .tc blockquote { font-size: var(--text-base); color: var(--color-muted); line-height: 1.75; font-style: italic; flex: 1; }
+  .tc__author { font-family: var(--font-heading); font-weight: 700; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-deep); }
+
+  /* WHY */
+  .why-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: var(--space-8); }
+  .why-item { padding: var(--space-6); border-left: 3px solid var(--color-aqua); min-width: 0; }
+  .why-item__num { font-family: var(--font-heading); font-weight: 800; font-size: 1.8rem; color: var(--color-aqua); line-height: 1; margin-bottom: var(--space-3); }
+  .why-item h3 { font-family: var(--font-heading); font-weight: 700; font-size: var(--text-sm); color: var(--color-deep); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: var(--space-2); }
+  .why-item p { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.7; }
+
+  @media (max-width: 900px) {
+    .intro-wrap { grid-template-columns: 1fr; gap: var(--space-8); }
+    .services-cards { grid-template-columns: repeat(2,1fr); }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: repeat(2,1fr); }
+    .job-gallery { grid-template-columns: 1fr; }
+    .job-gallery__side { flex-direction: row; }
+    .job-gallery__side img { height: 200px; }
+  }
+  @media (max-width: 600px) {
+    .trust-bar__inner { gap: var(--space-4); }
+    .trust-item { font-size: 0.62rem; }
+    .services-cards { grid-template-columns: 1fr; }
+    .hero__actions { flex-direction: column; align-items: center; }
+  }
+</style>
