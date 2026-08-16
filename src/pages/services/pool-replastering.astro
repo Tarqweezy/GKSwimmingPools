@@ -32,9 +32,13 @@ import { poolReplasteringFAQs } from '../../data/faq-data.js';
   <div class="trust-bar">
     <div class="trust-bar__inner">
       <span class="trust-item">20+ Years Experience</span>
+      <span class="trust-sep" aria-hidden="true">|</span>
       <span class="trust-item">3 Generations Family Owned</span>
+      <span class="trust-sep" aria-hidden="true">|</span>
       <span class="trust-item">Licensed &amp; Insured</span>
+      <span class="trust-sep" aria-hidden="true">|</span>
       <span class="trust-item">Financing Available</span>
+      <span class="trust-sep" aria-hidden="true">|</span>
       <span class="trust-item">5.0 &#9733; Google Rating</span>
     </div>
   </div>
@@ -129,7 +133,8 @@ import { poolReplasteringFAQs } from '../../data/faq-data.js';
   .hero__actions { display:flex; gap:var(--space-4); flex-wrap:wrap; justify-content:center; }
   .btn--outline-white { display:inline-block; border:2px solid rgba(255,255,255,.7); color:var(--color-white); font-family:var(--font-heading); font-weight:700; font-size:var(--text-sm); letter-spacing:.06em; text-transform:uppercase; padding:var(--space-4) var(--space-8); border-radius:var(--radius-sm); text-decoration:none; }
   .trust-bar { background:#05305f; padding:var(--space-4) var(--space-8); }
-  .trust-bar__inner { max-width:1060px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:var(--space-8); flex-wrap:wrap; }
+  .trust-bar__inner { max-width:1060px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:var(--space-4); flex-wrap:wrap; }
+  .trust-sep { color:rgba(255,255,255,.3); font-size:.85rem; user-select:none; }
   .trust-item { color:rgba(255,255,255,.82); font-size:var(--text-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; white-space:nowrap; }
   .finish-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-4); }
   .finish-card { background:var(--color-white); border:1.5px solid var(--color-border); border-top:3px solid var(--color-border); border-radius:var(--radius-sm); padding:var(--space-6); position:relative; }
