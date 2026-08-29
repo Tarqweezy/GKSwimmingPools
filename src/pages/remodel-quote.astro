@@ -53,37 +53,48 @@ const WEB3FORMS_KEY = "8de7a49a-5e8b-4e48-b420-933bac9d5db7";
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-card__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-        </div>
         <h3>Pool Replastering</h3>
         <p>Restore your pool's surface to like-new condition. Smooth out rough spots, eliminate staining, and stop slow leaks caused by aging plaster.</p>
         <span class="price-range">Starting at $4,500</span>
       </div>
       <div class="service-card">
-        <div class="service-card__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
         <h3>Pebble Tec &amp; Premium Finishes</h3>
         <p>Upgrade to a premium pebble or quartz finish that lasts 20+ years and gives your pool a resort-quality look. Multiple colors and textures available.</p>
         <span class="price-range">Starting at $8,000</span>
       </div>
       <div class="service-card">
-        <div class="service-card__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-        </div>
         <h3>Pool Retiling</h3>
         <p>Refresh your pool's waterline tile or resurface the full interior. Fix cracked and stained tile and give your pool a clean, updated look.</p>
         <span class="price-range">Starting at $2,500</span>
       </div>
       <div class="service-card">
-        <div class="service-card__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
         <h3>Full Pool Remodel</h3>
         <p>Complete transformation. new surface, updated coping, tile work, and equipment upgrades. Turn an outdated pool into the backyard centerpiece it should be.</p>
         <span class="price-range">Starting at $15,000</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR WORK -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Our Work</span>
+      <h2>Real Jobs. Real Results.</h2>
+      <p>GK Swimming Pools has been transforming backyards across Santa Clarita and the San Fernando Valley for over 20 years.</p>
+    </div>
+    <div class="photo-grid">
+      <img
+        src="/images/remodeling/gk-pool-mosaic-tile-detail.webp"
+        alt="Custom mosaic tile detail on a GK Swimming Pools remodel in Santa Clarita"
+        loading="lazy" decoding="async" width="1200" height="743"
+      />
+      <img
+        src="/images/remodeling/gk-pool-replastering-demo-crew.webp"
+        alt="GK Swimming Pools crew removing old plaster during a pool renovation"
+        loading="lazy" decoding="async" width="1200" height="743"
+      />
     </div>
   </div>
 </section>
@@ -115,32 +126,32 @@ const WEB3FORMS_KEY = "8de7a49a-5e8b-4e48-b420-933bac9d5db7";
         <div class="step-question">What type of service are you looking for?</div>
         <div class="option-grid option-grid--4">
           <button class="option-btn" data-step="1" data-value="Pool Replastering" onclick="selectOption(this, 1)">
-            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
-            <div class="option-btn__text">
+                        <div class="option-btn__text">
               <strong>Pool Replastering</strong>
               <span>Restore existing plaster surface</span>
             </div>
+            <span class="option-btn__check" aria-hidden="true"></span>
           </button>
           <button class="option-btn" data-step="1" data-value="Pebble Tec / Premium Finish" onclick="selectOption(this, 1)">
-            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-            <div class="option-btn__text">
+                        <div class="option-btn__text">
               <strong>Pebble Tec / Premium Finish</strong>
               <span>Upgrade to long-lasting pebble or quartz</span>
             </div>
+            <span class="option-btn__check" aria-hidden="true"></span>
           </button>
           <button class="option-btn" data-step="1" data-value="Pool Retiling" onclick="selectOption(this, 1)">
-            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
-            <div class="option-btn__text">
+                        <div class="option-btn__text">
               <strong>Pool Retiling</strong>
               <span>Waterline or full interior tile</span>
             </div>
+            <span class="option-btn__check" aria-hidden="true"></span>
           </button>
           <button class="option-btn" data-step="1" data-value="Full Pool Remodel" onclick="selectOption(this, 1)">
-            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-            <div class="option-btn__text">
+                        <div class="option-btn__text">
               <strong>Full Pool Remodel</strong>
               <span>Complete transformation</span>
             </div>
+            <span class="option-btn__check" aria-hidden="true"></span>
           </button>
         </div>
         <div class="form-nav" style="justify-content: flex-end">
@@ -154,32 +165,32 @@ const WEB3FORMS_KEY = "8de7a49a-5e8b-4e48-b420-933bac9d5db7";
         <div class="step-question">How big is your pool?</div>
         <div class="option-grid option-grid--4">
           <button class="option-btn" data-step="2" data-value="Small (under 400 sq ft)" onclick="selectOption(this, 2)">
-            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/></svg></div>
-            <div class="option-btn__text">
+                        <div class="option-btn__text">
               <strong>Small</strong>
               <span>Under 400 sq ft</span>
             </div>
+            <span class="option-btn__check" aria-hidden="true"></span>
           </button>
           <button class="option-btn" data-step="2" data-value="Medium (400–600 sq ft)" onclick="selectOption(this, 2)">
-            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/></svg></div>
-            <div class="option-btn__text">
+                        <div class="option-btn__text">
               <strong>Medium</strong>
               <span>400 – 600 sq ft</span>
             </div>
+            <span class="option-btn__check" aria-hidden="true"></span>
           </button>
           <button class="option-btn" data-step="2" data-value="Large (600+ sq ft)" onclick="selectOption(this, 2)">
-            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s2-4 5-4 5 4 5 4 2-4 5-4 5 4 5 4"/><path d="M2 18s2-4 5-4 5 4 5 4 2-4 5-4 5 4 5 4"/></svg></div>
-            <div class="option-btn__text">
+                        <div class="option-btn__text">
               <strong>Large</strong>
               <span>600+ sq ft</span>
             </div>
+            <span class="option-btn__check" aria-hidden="true"></span>
           </button>
           <button class="option-btn" data-step="2" data-value="Not Sure" onclick="selectOption(this, 2)">
-            <div class="option-btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-            <div class="option-btn__text">
+                        <div class="option-btn__text">
               <strong>Not Sure</strong>
               <span>We'll measure on-site</span>
             </div>
+            <span class="option-btn__check" aria-hidden="true"></span>
           </button>
         </div>
         <div class="form-nav">
@@ -533,7 +544,7 @@ Phone: ${formData.phone}
     .hero__overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(8,65,132,0.88) 0%, rgba(8,65,132,0.72) 100%);
+      background: linear-gradient(to bottom, rgba(8,65,132,0.20) 0%, rgba(8,65,132,0.42) 50%, rgba(5,35,75,0.62) 100%);
       z-index: 1;
     }
     .hero__content { text-align: center; display: flex; flex-direction: column; align-items: center;
@@ -653,17 +664,6 @@ Phone: ${formData.phone}
       border-top: 3px solid var(--aqua);
       border-radius: 5px;
       padding: 2rem;
-    }
-    .service-card__icon {
-      width: 44px;
-      height: 44px;
-      background: var(--mist);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
-      color: var(--blue);
     }
     .service-card h3 {
       font-family: "Montserrat", sans-serif;
@@ -788,31 +788,75 @@ Phone: ${formData.phone}
     .option-grid--3 { grid-template-columns: 1fr; }
     .option-grid--4 { grid-template-columns: 1fr 1fr; }
     .option-btn {
+      position: relative;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 1rem;
-      padding: 1rem 1.25rem;
+      padding: 1.15rem 1.35rem 1.15rem 1.5rem;
       border: 1.5px solid var(--border);
-      border-radius: 5px;
+      border-radius: 6px;
       background: var(--white);
       cursor: pointer;
       text-align: left;
-      transition: border-color 0.2s, background 0.2s;
       width: 100%;
+      overflow: hidden;
+      transition: border-color .2s ease, background .2s ease, box-shadow .2s ease, transform .15s ease;
     }
-    .option-btn:hover { border-color: var(--aqua); background: var(--mist); }
-    .option-btn.selected { border-color: var(--blue); background: var(--mist); }
-    .option-btn__icon {
-      width: 40px;
-      height: 40px;
-      min-width: 40px;
+    /* Aqua accent bar on the left — grows in on hover, fills on select */
+    .option-btn::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--aqua);
+      transform: scaleY(0);
+      transform-origin: center;
+      transition: transform .22s ease;
+    }
+    .option-btn:hover {
+      border-color: var(--aqua);
       background: var(--mist);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
+      box-shadow: 0 4px 16px rgba(8,65,132,.08);
+      transform: translateY(-1px);
     }
+    .option-btn:hover::before { transform: scaleY(.5); }
+    .option-btn.selected {
+      border-color: var(--aqua);
+      background: var(--mist);
+      box-shadow: 0 4px 20px rgba(92,225,230,.22);
+    }
+    .option-btn.selected::before { transform: scaleY(1); }
+
+    /* Selection indicator — empty ring that fills with a check */
+    .option-btn__check {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: var(--white);
+      position: relative;
+      transition: border-color .2s ease, background .2s ease;
+    }
+    .option-btn:hover .option-btn__check { border-color: var(--aqua); }
+    .option-btn.selected .option-btn__check {
+      background: var(--aqua);
+      border-color: var(--aqua);
+    }
+    .option-btn__check::after {
+      content: "";
+      position: absolute;
+      left: 6px; top: 2px;
+      width: 5px; height: 10px;
+      border: solid var(--blue);
+      border-width: 0 2.5px 2.5px 0;
+      transform: rotate(45deg) scale(0);
+      transition: transform .18s ease .05s;
+    }
+    .option-btn.selected .option-btn__check::after { transform: rotate(45deg) scale(1); }
+
+    .option-btn.selected .option-btn__text strong { color: var(--blue); }
     .option-btn__text strong {
       display: block;
       font-family: "Montserrat", sans-serif;
@@ -1139,4 +1183,22 @@ Phone: ${formData.phone}
       .process-grid { grid-template-columns: 1fr; }
     }
   
-</style>
+
+    /* OUR WORK PHOTO GRID */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .photo-grid img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+    @media (max-width: 640px) {
+      .photo-grid { grid-template-columns: 1fr; }
+      .photo-grid img { height: 240px; }
+    }
+  </style>
