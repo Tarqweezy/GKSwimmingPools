@@ -452,6 +452,19 @@ Phone: ${formData.phone}
       console.error("Submission error", e);
     }
 
+    // Fire the Google Ads "Submit lead form" conversion.
+    // gtagReportConversion is defined sitewide in Layout.astro (same helper
+    // used for phone-click tracking), so this is just calling the existing
+    // function with this action's own label. Guarded so a blocked or slow
+    // gtag load can never stop the user from seeing their estimate.
+    try {
+      if (typeof gtagReportConversion === "function") {
+        gtagReportConversion('gfIgCMexO8wcEKmsm71A');
+      }
+    } catch(e) {
+      console.error("Conversion tracking error", e);
+    }
+
     // Show success + estimate
     document.getElementById("step4").classList.remove("active");
     document.getElementById("formProgress").style.display = "none";
