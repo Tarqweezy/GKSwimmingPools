@@ -307,46 +307,46 @@ const faqSchema = {
 
   <ContactForm />
 
-</Layout>
+  <script>
+    const track = document.getElementById('testimonials-track');
+    const dotsContainer = document.getElementById('testimonials-dots');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
 
-<script>
-  const track = document.getElementById('testimonials-track');
-  const dotsContainer = document.getElementById('testimonials-dots');
-  const prevBtn = document.getElementById('prev-btn');
-  const nextBtn = document.getElementById('next-btn');
+    const cards = track.querySelectorAll('.testimonial-card');
+    const total = cards.length;
+    let current = 0;
+    let autoTimer;
 
-  const cards = track.querySelectorAll('.testimonial-card');
-  const total = cards.length;
-  let current = 0;
-  let autoTimer;
-
-  // Build dots
-  cards.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'testimonials__dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', `Testimonial ${i + 1}`);
-    dot.addEventListener('click', () => goTo(i));
-    dotsContainer.appendChild(dot);
-  });
-
-  function goTo(index) {
-    current = (index + total) % total;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dotsContainer.querySelectorAll('.testimonials__dot').forEach((d, i) => {
-      d.classList.toggle('active', i === current);
+    // Build dots
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'testimonials__dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Testimonial ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
     });
-  }
 
-  function startAuto() {
-    autoTimer = setInterval(() => goTo(current + 1), 5000);
-  }
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dotsContainer.querySelectorAll('.testimonials__dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
 
-  function stopAuto() {
-    clearInterval(autoTimer);
-  }
+    function startAuto() {
+      autoTimer = setInterval(() => goTo(current + 1), 5000);
+    }
 
-  prevBtn.addEventListener('click', () => { stopAuto(); goTo(current - 1); startAuto(); });
-  nextBtn.addEventListener('click', () => { stopAuto(); goTo(current + 1); startAuto(); });
+    function stopAuto() {
+      clearInterval(autoTimer);
+    }
 
-  startAuto();
-</script>
+    prevBtn.addEventListener('click', () => { stopAuto(); goTo(current - 1); startAuto(); });
+    nextBtn.addEventListener('click', () => { stopAuto(); goTo(current + 1); startAuto(); });
+
+    startAuto();
+  </script>
+
+</Layout>
