@@ -1,0 +1,179 @@
+---
+import Layout from './Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import FAQSection from '../components/FAQSection.astro';
+import { getCityFAQs } from '../data/faq-data.js';
+
+interface Props {
+  city: string;
+  region: string;
+  slug: string;
+  localContext: string;
+  localContext2: string;
+  nearbyAreas: string[];
+  callouts?: { icon: string; title: string; body: string }[];
+  caseStudyTitle?: string;
+  caseStudy?: string;
+  heroImage?: string;
+  whyChooseUs?: string;
+}
+
+const {
+  city,
+  region,
+  slug,
+  localContext,
+  localContext2,
+  nearbyAreas,
+  callouts = [],
+  caseStudyTitle,
+  caseStudy,
+  heroImage,
+  whyChooseUs,
+} = Astro.props;
+
+const title = `Pool Service in ${city}, ${region} | GK Swimming Pools`;
+const description = `Expert pool maintenance, repairs, and remodeling in ${city}, ${region}. Honest pricing, 20+ years experience. Call (818) 804-8204.`;
+const pageAreaServed = [city, ...nearbyAreas];
+---
+
+<Layout title={title} description={description} canonical={`https://www.gkswimmingpools.com/locations/${slug}`} areaServed={pageAreaServed}>
+
+  <!-- HERO -->
+  <section class={`hero ${heroImage ? '' : 'hero--solid'}`}>
+    {heroImage && (
+      <div class="hero__bg">
+        <img src={heroImage} alt={`Backyard swimming pool serviced by GK Swimming Pools in ${city}, ${region}`} fetchpriority="high" decoding="async" />
+      </div>
+    )}
+    <div class="container hero__inner">
+      <h1 class="hero__h1">{city} &middot; {region}</h1>
+      <p class="hero__offer">Pool Service in<br><em>{city}, {region}</em></p>
+      <p class="hero__sub">Maintenance, repairs, inspections, and remodeling. Serving {city} and surrounding areas. Honest pricing, no contracts, 20+ years experience.</p>
+      <div class="hero__actions">
+        <a href="/contact" class="btn btn--primary">Get Booked This Week</a>
+        <a href="tel:8188048204" class="btn btn--outline">(818) 804-8204</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL INTRO -->
+  <section class="section">
+    <div class="container">
+      <div style="max-width: 760px;">
+        <span class="eyebrow">Serving {city}</span>
+        <p class="lead" style="margin-bottom: 1.5rem;">{localContext}</p>
+        <p style="color: var(--color-muted); line-height: 1.8;">{localContext2}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES. cards with brief descriptions, linking to the full service pages -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">What We Do in {city}</span>
+        <h2>Our Pool Services</h2>
+        <p>Serving homes, apartment communities, hotels, and gyms across {city}. <a href="/services/commercial-pool-services" style="color: var(--color-aqua-dark); font-weight: 600;">Learn about our commercial pool service</a>.</p>
+      </div>
+      <div class="service-cards-grid">
+        <a href="/services/pool-maintenance" class="service-card">
+          <span class="service-card__icon">🏊</span>
+          <span class="service-card__title">Pool Maintenance</span>
+          <p class="service-card__desc">We maintain your pool's chemistry and keep the water clear and safe year-round. You'll always be updated on anything going on with your pool.</p>
+        </a>
+        <a href="/services/pool-repairs" class="service-card">
+          <span class="service-card__icon">🔧</span>
+          <span class="service-card__title">Pool Repairs</span>
+          <p class="service-card__desc">Fast, reliable repairs for cracks, leaks, pipes, and equipment. We diagnose the real problem and fix it right the first time.</p>
+        </a>
+        <a href="/services/pool-inspections" class="service-card">
+          <span class="service-card__icon">🔍</span>
+          <span class="service-card__title">Pool Inspections</span>
+          <p class="service-card__desc">A full inspection of your pool and its system for leaks, damage, and other issues, before they become expensive problems.</p>
+        </a>
+        <a href="/services/pool-remodeling" class="service-card">
+          <span class="service-card__icon">&#10024;</span>
+          <span class="service-card__title">Pool Remodeling</span>
+          <p class="service-card__desc">Transform your backyard with new plaster, tile, decking, and modern upgrades built to last for years to come.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US IN THIS CITY. real, city-specific trust paragraph -->
+  {whyChooseUs && (
+    <section class="section">
+      <div class="container">
+        <div class="why-city-box">
+          <span class="eyebrow">Why {city}</span>
+          <p class="why-city-box__text">{whyChooseUs}</p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- LOCAL CALLOUTS (city-specific reasons) -->
+  {callouts.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Why It Matters in {city}</span>
+          <h2>What {city} Pool Owners Should Know</h2>
+        </div>
+        <div class="why-grid">
+          {callouts.map((c, i) => (
+            <div class="why-item">
+              <div class="why-item__num" style="font-size: 2rem;" aria-hidden="true">{c.icon}</div>
+              <h3>{c.title}</h3>
+              <p>{c.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CASE STUDY (real local work example, builds E-E-A-T and adds genuine per-city content) -->
+  {caseStudy && (
+    <section class="section section--alt">
+      <div class="container">
+        <div style="max-width: 760px;">
+          <span class="eyebrow">From Our Service Log</span>
+          <h2 style="margin-bottom: 1.5rem;">{caseStudyTitle || `A recent job in ${city}`}</h2>
+          <p style="color: var(--color-muted); line-height: 1.8;">{caseStudy}</p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- NEARBY AREAS -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Also Serving</span>
+        <h2>Nearby Areas We Service</h2>
+        <p>We serve {city} and all surrounding neighborhoods across the greater Los Angeles area.</p>
+      </div>
+      <div class="area-chips">
+        {nearbyAreas.map(area => (
+          <span class="area-chip">{area}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={getCityFAQs(city)} heading={`Pool Service FAQs. ${city}`} />
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="container">
+      <h2>Serving {city}: Get Booked This Week</h2>
+      <p>Free consultation. No contracts. Honest pricing. Call us or fill out the form below.</p>
+      <a href="tel:8188048204" class="btn btn--primary">(818) 804-8204</a>
+    </div>
+  </div>
+
+  <ContactForm />
+
+</Layout>

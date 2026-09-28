@@ -1,0 +1,25 @@
+# GK Swimming Pools — 301 Redirects
+# Maps old Wix URLs to new Astro URL structure
+# Cloudflare Pages reads this file automatically
+
+/swimming-pool-maintenance        /services/pool-maintenance        301
+/swimming-pool-inspections        /services/pool-inspections        301
+/swimming-pool-repairs            /services/pool-repairs            301
+/pool-renovations                 /services/pool-remodeling         301
+/jacuzzi-hot-tub-services         /services/jacuzzi-service         301
+/our-story                        /our-story                        200
+/contact                          /contact                          200
+
+# Location page aliases (short form → canonical)
+/santa-clarita                    /locations/pool-service-santa-clarita     301
+/valencia                         /locations/pool-service-valencia          301
+/granada-hills                    /locations/pool-service-granada-hills     301
+/porter-ranch                     /locations/pool-service-porter-ranch      301
+/northridge                       /locations/pool-service-northridge        301
+/encino                           /locations/pool-service-encino            301
+/sherman-oaks                     /locations/pool-service-sherman-oaks      301
+/woodland-hills                   /locations/pool-service-woodland-hills    301
+/calabasas                        /locations/pool-service-calabasas         301
+/burbank                          /locations/pool-service-burbank           301
+/glendale                         /locations/pool-service-glendale          301
+/agoura-hills                     /locations/pool-service-agoura-hills      301
