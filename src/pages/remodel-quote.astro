@@ -414,6 +414,18 @@ const WEB3FORMS_KEY = "8de7a49a-5e8b-4e48-b420-933bac9d5db7";
     document.getElementById("step" + current).classList.remove("active");
     document.getElementById("step" + (current + 1)).classList.add("active");
     updateProgress(current + 1);
+
+    // GA4 funnel visibility only (not a Google Ads conversion). Lets us see
+    // in Analytics exactly which step people abandon on, instead of just
+    // knowing the final submit count. Guarded so a blocked/slow gtag load
+    // never affects the form itself.
+    try {
+      if (typeof gtag === "function") {
+        gtag("event", "quote_form_step", { step_reached: current + 1 });
+      }
+    } catch (e) {
+      console.error("Step tracking error", e);
+    }
   }
 
   function prevStep(current) {

@@ -118,24 +118,47 @@
       return;
     }
 
-    const formData = new FormData(form);
-    const res = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: formData,
-    });
-    const data = await res.json();
+    // Guarded end-to-end: a network hiccup, a Web3Forms outage, or an
+    // unexpected (non-JSON) response used to throw here uncaught, which
+    // silently killed the whole handler. The visitor saw no confirmation
+    // and no error message, and the conversion tag below never fired even
+    // though nothing was actually their fault. Now every failure path
+    // still shows a message and never leaves the user (or the tracking)
+    // hanging.
     result.style.display = 'block';
-    if (data.success) {
-      result.style.color = 'var(--color-aqua-dark)';
-      result.textContent = "Thanks! We'll be in touch within 24 hours.";
-      form.reset();
+    try {
+      const formData = new FormData(form);
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.success) {
+        result.style.color = 'var(--color-aqua-dark)';
+        result.textContent = "Thanks! We'll be in touch within 24 hours.";
+        form.reset();
+      } else {
+        result.style.color = '#e53e3e';
+        result.textContent = 'Something went wrong. Please call us directly at (818) 804-8204.';
+        return;
+      }
+    } catch (err) {
+      console.error('Contact form submission error', err);
+      result.style.color = '#e53e3e';
+      result.textContent = 'Something went wrong. Please call us directly at (818) 804-8204.';
+      return;
+    }
+
+    // Fire the Google Ads "Submit lead form" conversion. Guarded separately
+    // so a blocked or slow gtag load can never throw back into the form
+    // logic above.
+    try {
       // @ts-ignore. gtagReportConversion is defined globally in Layout.astro
       if (typeof gtagReportConversion === 'function') {
         gtagReportConversion('gfIgCMex08wcEKmsm71A');
       }
-    } else {
-      result.style.color = '#e53e3e';
-      result.textContent = 'Something went wrong. Please call us directly at (818) 804-8204.';
+    } catch (err) {
+      console.error('Conversion tracking error', err);
     }
   });
 </script>
