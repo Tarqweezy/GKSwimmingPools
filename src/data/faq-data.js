@@ -39,6 +39,31 @@ export const poolCleaningFAQs = [
     answer:
       "We serve the San Fernando Valley and Santa Clarita, including Santa Clarita, Valencia, Granada Hills, Porter Ranch, Northridge, Encino, Sherman Oaks, Woodland Hills, Calabasas, Burbank, Glendale, and Agoura Hills. Call us at (818) 804-8204 to confirm service in your area.",
   },
+  {
+    question: "How do you properly maintain a swimming pool?",
+    answer:
+      "Proper pool maintenance means testing and balancing your water chemistry regularly, cleaning the filter on a set schedule, skimming and vacuuming debris, and keeping the water circulating consistently. Staying consistent with these basics prevents most of the bigger problems pools run into.",
+  },
+  {
+    question: "What maintenance is required for a pool?",
+    answer:
+      "At minimum, a pool needs regular chemical testing and balancing, filter cleaning, skimming for debris, brushing walls and floors to prevent buildup, and checking equipment like the pump and heater for proper operation. Weekly attention keeps small issues from turning into bigger ones.",
+  },
+  {
+    question: "What are the 3 C's of pool care?",
+    answer:
+      "The 3 C's are circulation, cleaning, and chemistry. Circulation keeps water moving through the filter system so it doesn't stagnate. Cleaning covers skimming, brushing, and vacuuming debris. Chemistry means keeping chlorine, pH, and alkalinity balanced so the water stays safe and clear. All three work together, and neglecting one usually causes problems in the others.",
+  },
+  {
+    question: "What destroys chlorine in a pool?",
+    answer:
+      "Sunlight (UV exposure) breaks down chlorine quickly if the water isn't stabilized with cyanuric acid. Heavy bather load, organic debris like leaves and dirt, and high water temperatures all consume chlorine faster too. Rain can also dilute chlorine levels and shift your overall balance.",
+  },
+  {
+    question: "How do I keep my pool crystal clear all summer long?",
+    answer:
+      "Consistency is the key: test your water regularly, keep chlorine and pH within proper range, run your filter enough hours each day to fully turn over the water, and clean or backwash the filter on schedule. Brushing the walls and floor regularly also prevents the buildup that clouds water over time.",
+  },
 ];
 
 // ─── POOL REMODELING / REPLASTERING ─────────────────────────────
@@ -78,6 +103,46 @@ export const poolReplasteringFAQs = [
     answer:
       "We coordinate replastering projects directly and work with a trusted network of experienced plasterers we have worked with for years. You deal with GK Swimming Pools from start to finish. We stay on the job and make sure everything is done to our standard before we sign off.",
   },
+  {
+    question: "Can you remodel an existing pool?",
+    answer:
+      "Yes. Most existing pools can be remodeled, whether that means replastering, retiling, updating the shape or features, or addressing structural issues. The scope depends on the current condition of the pool, but a full remodel is almost always possible short of a pool that needs to be replaced entirely.",
+  },
+  {
+    question: "What are common swimming pool renovations?",
+    answer:
+      "The most common renovations are replastering, tile replacement, adding or updating water features, resurfacing, and upgrading equipment like pumps and heaters to more efficient models. Some renovations also involve reshaping or expanding the pool itself.",
+  },
+  {
+    question: "Is it cheaper to remodel a pool or build a new one?",
+    answer:
+      "Remodeling an existing pool is almost always less involved than building a new one, since the excavation, plumbing, and structural work are already in place. A new pool build starts from scratch, which typically means significantly more time and work. The right choice depends on the condition of your current pool and what you're trying to achieve.",
+  },
+  {
+    question: "What are some ideas for renovating my pool?",
+    answer:
+      "Popular directions include textured pebble finishes instead of standard plaster, glass or natural stone tile accents along the waterline, updated lighting, and added features like tanning ledges or spas. Color changes to plaster and tile are also a simple way to modernize a pool's look without a full structural renovation.",
+  },
+  {
+    question: "What time of year is best to resurface a pool?",
+    answer:
+      "Fall and winter are typically the best times to resurface, since the pool needs to be drained and out of use during the work, and demand for pool use is lower during those months. It also means the pool is ready to go once swimming season starts back up.",
+  },
+  {
+    question: "What to do with an inground pool you don't want anymore?",
+    answer:
+      "Homeowners generally have two options: fully remove the pool and restore the yard, or fill it in partially, which is less expensive but comes with limitations on what can be built over it later. A professional can walk through both options and what each involves for your specific yard.",
+  },
+  {
+    question: "What is the average lifespan of a pool?",
+    answer:
+      "A well-built and properly maintained inground pool typically lasts 20 to 30 years before major components need significant renovation. Plaster, tile, and equipment often need attention well before the pool itself needs to be replaced entirely.",
+  },
+  {
+    question: "Does homeowners insurance cover pool renovations?",
+    answer:
+      "Generally not for routine renovations or upgrades. Coverage depends on your specific policy and typically only applies if the damage stems from a covered event. Checking your policy directly is the only reliable way to know what's included.",
+  },
 ];
 
 // ─── POOL REPAIRS ────────────────────────────────────────────────
@@ -111,6 +176,60 @@ export const poolRepairFAQs = [
     question: "Are you licensed and insured?",
     answer:
       "Yes. GK Swimming Pools is fully licensed and insured. You can feel confident that work is done correctly and that you are protected throughout the process. We stand behind everything we do.",
+  },
+  {
+    question: "What are common swimming pool repair issues?",
+    answer:
+      "The most frequent repairs we see are pump and motor failures, cracked or leaking plumbing lines, damaged or clogged filters, broken skimmers, and issues with heaters or automation systems. Cracked tile and plaster damage also come up often, especially in older pools that haven't been resurfaced in a while.",
+  },
+  {
+    question: "Does homeowners insurance cover swimming pool repairs?",
+    answer:
+      "Typically, homeowners insurance doesn't cover general pool repairs or wear and tear. Coverage sometimes applies if the damage was caused by a covered event, like a storm or a falling tree, but that depends entirely on the specifics of your policy. Check your policy details or talk to your insurance provider to see what's actually covered before assuming either way.",
+  },
+  {
+    question: "Where is the most common place for pool leaks to occur?",
+    answer:
+      "Leaks most often show up at the plumbing connections near the pump and filter, around light fixtures and fittings, and at cracks in the pool shell itself, especially near steps, corners, or the deep end. Skimmers and return lines are also common trouble spots.",
+  },
+  {
+    question: "What is the average life expectancy of an inground pool?",
+    answer:
+      "A well-maintained inground pool typically lasts 20 to 30 years before major components like plaster, plumbing, or the shell need significant work. Regular maintenance, prompt repairs, and periodic resurfacing all extend that lifespan considerably.",
+  },
+  {
+    question: "What are some common pool problems and how can I fix them?",
+    answer:
+      "Cloudy water usually points to a chemistry imbalance or a filter that needs cleaning. Algae growth means chlorine levels have dropped too low. Low water pressure at the returns often means a clogged filter or skimmer basket. Persistent water loss beyond normal evaporation points to a leak that needs professional detection. Most of these are fixable, but pinpointing the actual cause is the important first step before attempting a fix.",
+  },
+];
+
+// ─── POOL INSPECTIONS ────────────────────────────────────────────
+export const poolInspectionFAQs = [
+  {
+    question: "What should a pool inspection include?",
+    answer:
+      "A thorough inspection covers the pool shell for cracks or structural issues, the plumbing and equipment (pump, filter, heater), electrical and safety equipment, plaster and tile condition, and a check for leaks or unusual water loss. A complete inspection should leave you with a clear picture of what's working and what needs attention.",
+  },
+  {
+    question: "How often should pools be inspected?",
+    answer:
+      "Most pools benefit from a professional inspection once a year, in addition to the routine checks that happen during regular maintenance visits. If your pool is older, showing signs of wear, or you're buying a home with an existing pool, an inspection sooner than that is a good idea.",
+  },
+  {
+    question: "Does homeowners insurance cover problems found during a pool inspection?",
+    answer:
+      "This depends on your specific policy. Insurance typically doesn't cover routine wear or maintenance issues, but damage from a covered event may be included. It's worth reviewing your policy or asking your provider directly rather than assuming coverage either way.",
+  },
+  {
+    question: "What are red flags during an inspection?",
+    answer:
+      "Cracks in the pool shell, visibly deteriorated plaster, unusual water loss, corroded or failing equipment, and electrical issues near the pool are all signs that need attention. Any of these on their own may be manageable, but several at once usually points to bigger problems worth addressing before they get worse.",
+  },
+  {
+    question: "How long should a pool inspection take?",
+    answer:
+      "A thorough inspection typically takes one to two hours, depending on the size of the pool and the condition of the equipment. More complex pools with additional features like spas, waterfalls, or automation systems can take longer to fully check.",
   },
 ];
 

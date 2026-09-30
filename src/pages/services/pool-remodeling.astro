@@ -96,10 +96,10 @@ import { poolReplasteringFAQs } from '../../data/faq-data.js';
         <p>From the surface to the systems. we handle every part of the renovation.</p>
       </div>
       <div class="services-cards">
-        <div class="svc-card"><div class="svc-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Plaster Resurfacing</h3><p>Fresh plaster for a smooth, clean new finish that completely transforms your water. Starting at $4,500.</p></div>
+        <div class="svc-card"><div class="svc-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Plaster Resurfacing</h3><p>Fresh plaster for a smooth, clean new finish that completely transforms your water. Starting at $4,500.</p><a href="/services/pool-replastering" class="svc-card__link">Pool replastering details <span aria-hidden="true">&rarr;</span></a></div>
         <div class="svc-card"><div class="svc-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3>Pebble Tec &amp; Premium Finishes</h3><p>Durable pebble and quartz finishes lasting 15–20 years. Resort-quality look. Starting at $8,000.</p></div>
-        <div class="svc-card"><div class="svc-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div><h3>Tile &amp; Waterline Tile</h3><p>New tile along the waterline or throughout the pool and spa for a custom, polished look.</p></div>
-        <div class="svc-card"><div class="svc-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3>Pool Deck Remodeling</h3><p>Transform worn or outdated concrete decking into stunning outdoor spaces that match the new pool.</p></div>
+        <div class="svc-card"><div class="svc-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div><h3>Tile &amp; Waterline Tile</h3><p>New tile along the waterline or throughout the pool and spa for a custom, polished look.</p><a href="/services/pool-retiling" class="svc-card__link">Pool retiling details <span aria-hidden="true">&rarr;</span></a></div>
+        <div class="svc-card"><div class="svc-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3>Pool Deck Remodeling</h3><p>Transform worn or outdated concrete decking into stunning outdoor spaces that match the new pool.</p><a href="/services/pool-coping-decks" class="svc-card__link">Coping and deck details <span aria-hidden="true">&rarr;</span></a></div>
         <div class="svc-card"><div class="svc-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></div><h3>LED Lighting Upgrades</h3><p>Modern LED and color lighting systems that transform nighttime swimming into an experience.</p></div>
         <div class="svc-card"><div class="svc-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Equipment &amp; Smart Systems</h3><p>Pump, filter, heater, and skimmer upgrades. Smart automation so you control everything from your phone.</p></div>
       </div>
@@ -239,4 +239,23 @@ import { poolReplasteringFAQs } from '../../data/faq-data.js';
     .services-cards { grid-template-columns: 1fr; }
     .hero__actions { flex-direction: column; align-items: center; }
   }
+
+  /* Links from the three cards that have their own dedicated service pages */
+  .svc-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    margin-top: var(--space-4);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--text-xs);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--color-deep);
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-aqua);
+    padding-bottom: 2px;
+    transition: gap .2s ease;
+  }
+  .svc-card__link:hover { gap: .7rem; }
 </style>
