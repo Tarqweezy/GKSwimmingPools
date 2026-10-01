@@ -143,6 +143,21 @@ export const poolReplasteringFAQs = [
     answer:
       "Generally not for routine renovations or upgrades. Coverage depends on your specific policy and typically only applies if the damage stems from a covered event. Checking your policy directly is the only reliable way to know what's included.",
   },
+  {
+    question: "What is the difference between resurfacing and replastering a pool?",
+    answer:
+      "The terms are often used interchangeably, but replastering specifically refers to redoing the plaster surface (the smooth or pebble-finish interior coating). Resurfacing is the broader term and can include replastering along with other surface work like tile and coping. In practice, a resurface job often includes replastering as its main component.",
+  },
+  {
+    question: "What is the longest lasting pool resurfacing?",
+    answer:
+      "Pebble aggregate finishes (like Pebble Tec) generally last the longest among common resurfacing options, often outperforming standard plaster by several years, thanks to the embedded stone surface resisting wear better than smooth plaster. Quartz aggregate finishes are also known for strong durability. Standard plaster is the most affordable option but typically needs replacing sooner than textured finishes.",
+  },
+  {
+    question: "How many times can a pool be resurfaced?",
+    answer:
+      "There's no fixed number. It depends on the condition of the underlying pool shell each time. Every resurfacing job removes a small amount of the shell's substrate during prep, so a pool that's been resurfaced multiple times over many decades may eventually need structural evaluation before another surface job. Most pools can be resurfaced several times over their lifespan without issue.",
+  },
 ];
 
 // ─── POOL REPAIRS ────────────────────────────────────────────────
@@ -230,6 +245,50 @@ export const poolInspectionFAQs = [
     question: "How long should a pool inspection take?",
     answer:
       "A thorough inspection typically takes one to two hours, depending on the size of the pool and the condition of the equipment. More complex pools with additional features like spas, waterfalls, or automation systems can take longer to fully check.",
+  },
+];
+
+// ─── POOL RETILING ─────────────────────────────────
+export const poolRetilingFAQs = [
+  {
+    question: "How much does pool retiling cost?",
+    answer:
+      "Waterline tile replacement on a typical residential pool runs roughly $3,000 to $5,000, depending on the length of the waterline, the tile you choose, and the condition of the surface underneath. A full interior retile costs more and is usually bundled with a replaster. We give you a written quote after seeing the pool, so you are not working off a guess.",
+  },
+  {
+    question: "Is it difficult to retile a pool?",
+    answer:
+      "Retiling itself is a specialized job best left to professionals, since it involves careful surface prep, precise tile setting, and proper grout and sealant work to keep water out from behind the tile. It's not a simple DIY weekend project. Mistakes in prep or sealing lead to tiles failing again within a year or two.",
+  },
+  {
+    question: "Can you replace pool tile without draining the pool?",
+    answer:
+      "Generally no, at least not for a full retile. Waterline tile replacement requires the water level to be lowered below the work area, and any tile below the waterline requires the pool to be drained. Small spot repairs on a few tiles above the waterline are sometimes possible without a full drain, but that depends on where the damage is.",
+  },
+  {
+    question: "How long does a pool retiling job take?",
+    answer:
+      "A waterline tile replacement typically takes three to five days, covering the drain, the removal, setting the new tile, grouting, and the refill. A full interior retile paired with a replaster runs longer, usually one to two weeks depending on pool size and whether the substrate needs repair. Cure times and weather affect the schedule.",
+  },
+  {
+    question: "How long does pool tile last?",
+    answer:
+      "Properly installed pool tile commonly lasts fifteen to twenty years or longer, which outlasts the plaster behind it. Tile rarely fails because the tile itself wore out. It fails because the surface underneath moved, the grout broke down, or water got in behind it. That is why the prep work matters more than which tile you pick.",
+  },
+  {
+    question: "What causes pool tile to fall off or crack?",
+    answer:
+      "The usual causes are water getting behind the tile through failed grout, movement or cracking in the substrate underneath, hard water slowly eating away at the grout lines, and poor prep during the original installation. A single loose tile is often a small repair. Several coming loose in the same area usually means the problem is behind the tile, not the tile itself.",
+  },
+  {
+    question: "Can you tile over existing pool tile?",
+    answer:
+      "No. New tile has to be set on a clean, sound surface, so the old tile and thinset come off first. Tiling over existing tile traps whatever caused the original failure and adds thickness that throws off the waterline. It is the kind of shortcut that looks fine for one season and then starts popping loose.",
+  },
+  {
+    question: "How do I get calcium buildup off my pool tile?",
+    answer:
+      "Light calcium can often be handled with a pumice stone or a tile cleaner made for pools. Heavier buildup usually needs professional bead blasting, which strips the deposits without damaging the tile underneath. Water in Santa Clarita and the San Fernando Valley is hard, so scaling builds up faster here than in most of the country. Keeping calcium hardness balanced slows it down considerably.",
   },
 ];
 

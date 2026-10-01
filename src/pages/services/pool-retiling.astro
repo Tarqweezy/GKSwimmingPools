@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import { poolRetilingFAQs } from '../../data/faq-data.js';
 ---
 
 <Layout
@@ -129,9 +131,7 @@ import ContactForm from '../../components/ContactForm.astro';
     </div>
   </section>
 
-  <!-- FAQ section slots in here. Add poolRetilingFAQs to src/data/faq-data.js,
-       then import FAQSection and the array at the top of this file and render:
-       <FAQSection faqs={poolRetilingFAQs} heading="Pool Retiling FAQs" /> -->
+  <FAQSection faqs={poolRetilingFAQs} heading="Pool Retiling FAQs" />
 
   <div class="cta-band">
     <div class="container">
