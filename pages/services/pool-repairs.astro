@@ -1,0 +1,319 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import { poolRepairFAQs } from '../../data/faq-data.js';
+---
+
+<Layout
+  title="Pool Repair Service in Santa Clarita & Los Angeles | GK Swimming Pools"
+  description="Fast, reliable pool repairs across Santa Clarita and the San Fernando Valley. Leaks, cracks, pipes, and equipment. Free on-site assessment. Call (818) 804-8204."
+>
+
+  <section class="hero">
+    <div class="hero__bg">
+      <img src="/images/services/pool-repair-hero.webp" alt="Pool repair technician working on backyard pool equipment" fetchpriority="high" decoding="async" />
+    </div>
+    <div class="container hero__inner">
+      <h1 class="hero__h1">Pool Repair Across Santa Clarita &amp; the San Fernando Valley</h1>
+      <p class="hero__offer">Something Broken?<br>Get a <em>Free On-Site Assessment</em></p>
+      <p class="hero__sub">Leaks, cracks, broken pipes, and failing equipment. We find the actual cause before we quote, so you are not paying to fix a symptom.</p>
+      <div class="hero__actions">
+        <a href="/contact" class="btn btn--primary">Book My Free Assessment</a>
+        <a href="tel:8188048204" class="btn btn--outline">(818) 804-8204</a>
+      </div>
+      <p class="hero__trust">Three generations family owned &middot; Licensed and insured &middot; No surprise charges</p>
+    </div>
+  </section>
+
+  <div class="trust-bar">
+    <div class="trust-bar__inner">
+      <span class="trust-item">20+ Years Experience</span>
+      <span class="trust-sep" aria-hidden="true">|</span>
+      <span class="trust-item">3 Generations Family Owned</span>
+      <span class="trust-sep" aria-hidden="true">|</span>
+      <span class="trust-item">Licensed &amp; Insured</span>
+      <span class="trust-sep" aria-hidden="true">|</span>
+      <span class="trust-item">Free Assessment</span>
+      <span class="trust-sep" aria-hidden="true">|</span>
+      <span class="trust-item">5.0 &#9733; Google Rating</span>
+    </div>
+  </div>
+
+  <section class="reveal section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">What We Fix</span>
+        <h2>Pool and spa repairs</h2>
+        <p>From a slow leak you cannot find to equipment that stopped working altogether.</p>
+      </div>
+
+      <div class="cards-grid cards-grid--four">
+        <div class="card card--photo">
+          <div class="card__media">
+            <img src="/images/services/pool-repair-leak-detection.webp" alt="GK Swimming Pools technician performing a pressure test to locate a pool leak" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <h3>Leak Detection</h3>
+            <p>Our most requested repair. We find the source instead of patching where the water shows up.</p>
+            <ul>
+              <li>Pressure and Dye Testing</li>
+              <li>Underground Plumbing Leaks</li>
+              <li>Shell and Fitting Leaks</li>
+              <li>Skimmer and Light Leaks</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card card--photo">
+          <div class="card__media">
+            <img src="/images/services/pool-repair-plaster.webp" alt="GK Swimming Pools technician troweling fresh plaster beside waterline tile" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <h3>Cracks &amp; Plaster</h3>
+            <p>Surface damage and structural cracks, sealed before they spread into a bigger job.</p>
+            <ul>
+              <li>Structural Crack Sealing</li>
+              <li>Plaster Chips and Spalling</li>
+              <li>Hollow Spot Repair</li>
+              <li>Tile and Grout Repair</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card card--photo">
+          <div class="card__media">
+            <img src="/images/services/pool-repair-equipment.webp" alt="Pool pump disassembled into wet end and motor during an equipment repair" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <h3>Equipment Repair</h3>
+            <p>When circulation drops or the water never heats up, the cause is usually here.</p>
+            <ul>
+              <li>Pumps and Motors</li>
+              <li>Filters and Skimmers</li>
+              <li>Heater Repair and Replacement</li>
+              <li>Spa Jets and Controls</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card card--photo">
+          <div class="card__media">
+            <img src="/images/services/pool-repair-pipes.webp" alt="Replaced PVC pool plumbing in an excavated trench beside the pool deck" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <h3>Pipes &amp; Electrical</h3>
+            <p>The parts you cannot see, handled safely and brought back up to code.</p>
+            <ul>
+              <li>Broken Pipe Replacement</li>
+              <li>Valve and Fitting Repair</li>
+              <li>Timer and Control Wiring</li>
+              <li>Safety and Code Checks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">How It Works</span>
+        <h2>What to expect when you call</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-step__num">1</div>
+          <h3>We Come Out and Look</h3>
+          <p>No quoting a repair over the phone. We come to the pool, find the actual problem, and show you what we found.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step__num">2</div>
+          <h3>You Get a Real Number</h3>
+          <p>A written price for the work that needs doing, and an honest answer on anything that can wait.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step__num">3</div>
+          <h3>We Fix It</h3>
+          <p>The repair gets done properly the first time, with no callbacks and no surprise charges at the end.</p>
+        </div>
+      </div>
+      <div class="process-cta">
+        <a href="/contact" class="btn btn--primary">Book My Free Assessment</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal section">
+    <div class="container">
+      <div style="max-width: 760px;">
+        <span class="eyebrow">Service Area</span>
+        <h2>Repairs across the Valley</h2>
+        <p class="lead" style="margin-bottom: 1.5rem;">
+          GK Swimming Pools handles swimming pool and spa repairs throughout Santa Clarita and the San Fernando Valley. Three generations of family craftsmanship, fully licensed and insured.
+        </p>
+        <p style="color: var(--color-muted);">
+          We serve homeowners in Santa Clarita, Valencia, Granada Hills, Porter Ranch, Northridge, Encino, Sherman Oaks, Woodland Hills, Calabasas, Burbank, Glendale, and Agoura Hills. The water here is hard, and we know what that does to plaster, tile, and equipment over time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Why GK</span>
+        <h2>Why choose us</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-item__num" aria-hidden="true">01</div>
+          <h3>Three Generations</h3>
+          <p>A family business repairing pools in this area for over 20 years. The people who quote the job are the ones who do it.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-item__num" aria-hidden="true">02</div>
+          <h3>We Find the Real Cause</h3>
+          <p>Water on the deck does not always mean the leak is there. We diagnose the source before quoting, so you are not paying twice.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-item__num" aria-hidden="true">03</div>
+          <h3>Transparent Pricing</h3>
+          <p>Competitive, upfront pricing with no hidden fees. If something can wait, we tell you it can wait.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-item__num" aria-hidden="true">04</div>
+          <h3>Local to Your Area</h3>
+          <p>Based in Santa Clarita and serving the surrounding Valley. Same day callbacks, and a crew that knows these neighborhoods.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal testimonials">
+    <div class="container">
+      <h2>What our clients say</h2>
+    </div>
+    <div class="testimonials__track-wrap">
+      <div class="testimonials__track" id="testimonials-track">
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__inner">
+            <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-card__quote">"Best Pool Service in LA. They take pride in their work and it shows every single week."</p>
+            <div class="testimonial-card__author">James, Granada Hills</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__inner">
+            <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-card__quote">"On Time. Professional. Can't recommend enough."</p>
+            <div class="testimonial-card__author">Dan, Burbank</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__inner">
+            <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-card__quote">"Very thorough and keeps us up to date."</p>
+            <div class="testimonial-card__author">Kristina, Sherman Oaks</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="testimonials__controls">
+      <button class="testimonials__btn" id="prev-btn" aria-label="Previous">&#8592;</button>
+      <div class="testimonials__dots" id="testimonials-dots"></div>
+      <button class="testimonials__btn" id="next-btn" aria-label="Next">&#8594;</button>
+    </div>
+  </section>
+
+  <FAQSection faqs={poolRepairFAQs} heading="Pool Repair FAQs" />
+
+  <div class="cta-band">
+    <div class="container">
+      <h2>Get your pool repaired fast</h2>
+      <p>Free on-site assessment, honest pricing. Serving Santa Clarita and the San Fernando Valley.</p>
+      <a href="tel:8188048204" class="btn btn--primary">(818) 804-8204</a>
+    </div>
+  </div>
+
+  <ContactForm />
+
+  <script>
+    const track = document.getElementById('testimonials-track');
+    const dotsContainer = document.getElementById('testimonials-dots');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    const cards = track.querySelectorAll('.testimonial-card');
+    const total = cards.length;
+    let current = 0;
+    let autoTimer;
+
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'testimonials__dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Testimonial ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dotsContainer.querySelectorAll('.testimonials__dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    function startAuto() {
+      autoTimer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    function stopAuto() {
+      clearInterval(autoTimer);
+    }
+
+    prevBtn.addEventListener('click', () => { stopAuto(); goTo(current - 1); startAuto(); });
+    nextBtn.addEventListener('click', () => { stopAuto(); goTo(current + 1); startAuto(); });
+
+    startAuto();
+  </script>
+
+</Layout>
+
+<style>
+  .trust-bar { background:#05305f; padding:var(--space-4) var(--space-8); }
+  .trust-bar__inner { max-width:1060px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:var(--space-4); flex-wrap:wrap; }
+  .trust-sep { color:rgba(255,255,255,.3); font-size:.85rem; user-select:none; }
+  .trust-item { color:rgba(255,255,255,.82); font-size:var(--text-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; white-space:nowrap; }
+
+  .process-grid { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:var(--space-6); }
+  .process-step {
+    background:var(--color-white); border:1.5px solid var(--color-border);
+    border-top:3px solid var(--color-aqua); border-radius:var(--radius-sm);
+    padding:var(--space-8) var(--space-6); min-width:0;
+  }
+  .process-step__num {
+    width:42px; height:42px; border-radius:50%;
+    background:var(--color-aqua); color:var(--color-deep);
+    font-family:var(--font-body); font-weight:800; font-size:1.1rem;
+    display:flex; align-items:center; justify-content:center; line-height:1;
+    margin-bottom:var(--space-4);
+  }
+  .process-step h3 {
+    font-family:var(--font-body); font-weight:700; font-size:var(--text-base);
+    color:var(--color-deep); text-transform:uppercase; letter-spacing:.03em;
+    margin-bottom:var(--space-3);
+  }
+  .process-step p { font-size:var(--text-sm); color:var(--color-muted); line-height:1.7; margin:0; max-width:none; }
+  .process-cta { text-align:center; margin-top:var(--space-12); }
+
+  @media (max-width:900px) {
+    .process-grid { grid-template-columns:1fr; }
+  }
+</style>

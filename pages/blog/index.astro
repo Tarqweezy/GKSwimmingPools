@@ -1,0 +1,231 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// HOW TO ADD A NEW POST: copy a block in the posts array below
+const posts = [
+  {
+    title: "Does a Pool Increase Your Home's Value?",
+    excerpt:
+      "A pool can support your home's value or work against it, and the difference usually comes down to condition. Here is how it plays out in Southern California, plus what to know about taxes and resale.",
+    image: "/images/blog/pool-home-value-hero.webp",
+    imageAlt: "Clean, well-maintained backyard swimming pool with blue tile accents in Santa Clarita",
+    slug: "/blog/pool-home-value",
+    category: "Pool Care",
+    readTime: "4 min read",
+    date: "September 30, 2026",
+  },
+  {
+    title: "How to Know If Your Pool Has a Leak",
+    excerpt:
+      "Rising water bill? Topping off more than usual? Here is how to tell if your pool has a leak, including the bucket test and dye test you can run yourself.",
+    image: "/images/blog/pool-leak-detection-hero.webp",
+    imageAlt: "GK Swimming Pools technician performing pool leak detection",
+    slug: "/blog/pool-leak-detection",
+    category: "Pool Repairs",
+    readTime: "5 min read",
+    date: "September 24, 2026",
+  },
+  {
+    title: "Is Your Pool Due for an Acid Wash?",
+    excerpt:
+      "Stains that won't scrub off usually mean the discoloration is in the plaster itself. Here is how to tell if you need an acid wash, and when replastering is the better call.",
+    image: "/images/blog/pool-acid-wash-hero.webp",
+    imageAlt: "Swimming pool with clean plaster surface after a professional acid wash",
+    slug: "/blog/pool-acid-wash",
+    category: "Pool Care",
+    readTime: "6 min read",
+    date: "September 16, 2026",
+  },
+  {
+    title: "Modern Inground Pool Remodel Ideas and Design Trends",
+    excerpt:
+      "Pebble finishes, dark plaster, glass tile. Here are the pool remodel design trends homeowners are choosing right now and how to pick what fits your backyard.",
+    image: "/images/blog/pool-remodel-design-trends-hero.webp",
+    imageAlt: "GK Swimming Pools crew applying a dark plaster finish during a pool remodel",
+    slug: "/blog/pool-remodel-design-trends",
+    category: "Pool Remodeling",
+    readTime: "6 min read",
+    date: "September 2, 2026",
+  },
+  {
+    title: "How Much Does It Cost to Redesign a Swimming Pool?",
+    excerpt:
+      "Pool size, plaster type, tile work, and shell condition all drive the cost of a redesign. Here is what actually determines your price.",
+    image: "/images/blog/pool-redesign-mosaic-tile-hero.webp",
+    imageAlt: "Custom blue mosaic tile detail on a redesigned swimming pool",
+    slug: "/blog/pool-redesign-cost",
+    category: "Pool Remodeling",
+    readTime: "5 min read",
+    date: "August 29, 2026",
+  },
+  {
+    title: "How Much Does Swimming Pool Retiling Cost?",
+    excerpt:
+      "Cracked tiles, calcium buildup, loose grout. Here is what pool retiling actually costs and how to know whether you need a repair or a full replacement.",
+    image: "/images/cities/pool-tile-detail.webp",
+    imageAlt: "Pool waterline tile detail showing clear water and mosaic tile",
+    slug: "/blog/pool-retiling-cost",
+    category: "Pool Remodeling",
+    readTime: "6 min read",
+    date: "August 26, 2026",
+  },
+  {
+    title: "What Is the Average Lifespan of a Pool?",
+    excerpt:
+      "From the shell to the plaster, plumbing to equipment — every part of your pool has its own lifespan. Here is what to expect and what affects how long each component lasts.",
+    image: "/images/blog/pool-lifespan-hero.webp",
+    imageAlt: "Well-maintained inground pool in a Southern California backyard",
+    slug: "/blog/pool-lifespan",
+    category: "Pool Care",
+    readTime: "8 min read",
+    date: "August 15, 2026",
+  },
+  {
+    title: "What Is the Average Cost to Resurface a Pool?",
+    excerpt:
+      "Most homeowners in the San Fernando Valley pay between $4,500 and $9,000 for a full resurface. Here's a breakdown by material and what actually moves the price up or down.",
+    image: "/images/blog/pool-resurfacing-pebble-finish-santa-clarita.webp",
+    imageAlt: "Pool being resurfaced with fresh plaster in Santa Clarita",
+    slug: "/blog/pool-resurfacing-cost",
+    category: "Pool Remodeling",
+    readTime: "6 min read",
+    date: "July 28, 2026",
+  },
+  {
+    title: "Swimming Pool Maintenance for Beginners",
+    excerpt: "Learn the essential chemicals, tools, and routines every pool owner needs to keep their water clean, safe, and looking great year-round.",
+    image: "/images/pool-maintenance-hero.webp",
+    imageAlt: "Pool cleaning chemicals and tools on a wooden pool deck",
+    slug: "/blog/swimming-pool-maintenance-beginners",
+    category: "Pool Care",
+    readTime: "7 min read",
+    date: "July 13, 2025",
+  },
+  // ADD NEW POSTS HERE. copy the block above and paste it below this line
+];
+---
+
+<Layout
+  title="Pool Care Blog | GK Swimming Pools"
+  description="Expert pool maintenance tips, guides, and advice from GK Swimming Pools serving Santa Clarita and the San Fernando Valley."
+  canonical="https://www.gkswimmingpools.com/blog"
+>
+
+  <section class="blog-index-hero">
+    <div class="container blog-index-hero__inner">
+      <span class="eyebrow">GK Swimming Pools</span>
+      <h1>Pool Care Blog</h1>
+      <p>Expert tips and guides to help you get the most out of your pool all year long.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-index-top">
+        <h2>All Articles</h2>
+        <span class="blog-index-count">{posts.length} {posts.length === 1 ? "article" : "articles"}</span>
+      </div>
+
+      {posts.length > 0 ? (
+        <div class="blog-grid">
+          {posts.map((post) => (
+            <article class="blog-card">
+              <a href={post.slug} class="blog-card__img-wrap">
+                <img src={post.image} alt={post.imageAlt} width="640" height="210" loading="lazy" decoding="async" />
+                <span class="blog-card__category">{post.category}</span>
+              </a>
+              <div class="blog-card__body">
+                <div class="blog-card__meta">
+                  <span>{post.date}</span>
+                  <span class="blog-card__dot" aria-hidden="true"></span>
+                  <span>{post.readTime}</span>
+                </div>
+                <h3><a href={post.slug}>{post.title}</a></h3>
+                <p>{post.excerpt}</p>
+                <a href={post.slug} class="blog-card__link">
+                  Read Article
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <p class="blog-empty">No articles yet. Check back soon.</p>
+      )}
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="container">
+      <h2>Have a Pool Problem?</h2>
+      <p>We are one call away. Serving Santa Clarita and the San Fernando Valley.</p>
+      <a href="tel:8188048204" class="btn btn--primary">(818) 804-8204</a>
+    </div>
+  </div>
+
+</Layout>
+
+<style>
+  .blog-index-hero {
+    background: linear-gradient(135deg, var(--color-deep) 0%, var(--color-deep-dark) 100%);
+    padding: var(--space-24) 0 var(--space-16);
+    text-align: center;
+  }
+  .blog-index-hero__inner .eyebrow { color: var(--color-aqua); margin-bottom: var(--space-3); }
+  .blog-index-hero__inner h1 { color: var(--color-white); margin-bottom: var(--space-4); }
+  .blog-index-hero__inner p { color: rgba(255,255,255,.75); font-size: var(--text-lg); margin: 0 auto; }
+
+  .blog-index-top {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: var(--space-8); flex-wrap: wrap; gap: var(--space-4);
+  }
+  .blog-index-top h2 { font-size: var(--text-xl); }
+  .blog-index-count { font-size: var(--text-sm); color: var(--color-muted); font-weight: 600; }
+
+  .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-8); }
+
+  .blog-card {
+    background: var(--color-white); border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md); overflow: hidden; display: flex;
+    flex-direction: column; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(8,65,132,.10); }
+
+  .blog-card__img-wrap { position: relative; height: 210px; overflow: hidden; display: block; }
+  .blog-card__img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+  .blog-card:hover .blog-card__img-wrap img { transform: scale(1.04); }
+  .blog-card__category {
+    position: absolute; top: var(--space-4); left: var(--space-4);
+    font-size: var(--text-xs); font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    background: var(--color-deep); color: var(--color-aqua); padding: 0.3rem 0.75rem; border-radius: 2px;
+  }
+
+  .blog-card__body { padding: var(--space-6); display: flex; flex-direction: column; flex: 1; }
+  .blog-card__meta { display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-3); }
+  .blog-card__meta span { font-size: var(--text-xs); color: var(--color-muted); font-weight: 600; }
+  .blog-card__dot { width: 3px; height: 3px; border-radius: 50%; background: var(--color-muted); }
+  .blog-card__body h3 {
+    font-size: var(--text-lg); color: var(--color-deep); margin-bottom: var(--space-3);
+    text-transform: uppercase; letter-spacing: .02em; line-height: 1.3;
+  }
+  .blog-card__body h3 a { color: inherit; }
+  .blog-card__body p { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.7; flex: 1; margin-bottom: var(--space-4); }
+
+  .blog-card__link {
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    font-size: var(--text-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--color-deep); border-bottom: 2px solid var(--color-aqua); padding-bottom: 1px;
+    width: fit-content; transition: color 0.2s;
+  }
+  .blog-card__link:hover { color: var(--color-deep-dark); }
+  .blog-card__link svg { transition: transform 0.2s; }
+  .blog-card__link:hover svg { transform: translateX(3px); }
+
+  .blog-empty { color: var(--color-muted); text-align: center; padding: var(--space-16) 0; }
+
+  @media (max-width: 640px) { .blog-grid { grid-template-columns: 1fr; } }
+</style>
