@@ -225,9 +225,10 @@ const WEB3FORMS_KEY = "8de7a49a-5e8b-4e48-b420-933bac9d5db7";
           <label for="phone">Phone Number</label>
           <input type="tel" id="phone" placeholder="(818) 555-0100" autocomplete="tel" />
         </div>
+        <p class="form-error" id="formError" role="alert" hidden>Something went wrong and your request did not go through. Please try again, or call us directly at <a href="tel:8188048204">(818) 804-8204</a>.</p>
         <div class="form-nav">
           <button class="btn-back" onclick="prevStep(4)">&larr; Back</button>
-          <button class="btn-submit" onclick="submitForm()">Get My Free Estimate ✓</button>
+          <button class="btn-submit" id="submitBtn" onclick="submitForm()">Get My Free Estimate ✓</button>
         </div>
       </div>
 
@@ -442,9 +443,16 @@ const WEB3FORMS_KEY = "8de7a49a-5e8b-4e48-b420-933bac9d5db7";
     formData.name = name;
     formData.phone = phone;
 
-    // Submit to Web3Forms
+    // Lock the button while sending so a double tap cannot send two leads.
+    const submitBtn = document.getElementById("submitBtn");
+    const formError = document.getElementById("formError");
+    formError.hidden = true;
+    submitBtn.disabled = true;
+
+    // Submit to Web3Forms. Only treat it as a lead if Web3Forms confirms it.
+    let delivered = false;
     try {
-      await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -460,8 +468,19 @@ Phone: ${formData.phone}
           `.trim()
         })
       });
+      const data = await res.json();
+      delivered = data.success === true;
     } catch(e) {
       console.error("Submission error", e);
+    }
+
+    // If the lead did not go through, stay on this step and say so. No
+    // conversion is counted and no estimate is shown, so the visitor is
+    // never told "You're All Set" for a request we did not receive.
+    if (!delivered) {
+      formError.hidden = false;
+      submitBtn.disabled = false;
+      return;
     }
 
     // Fire the Google Ads "Submit lead form" conversion.
@@ -975,6 +994,18 @@ Phone: ${formData.phone}
       transition: opacity 0.2s;
     }
     .btn-submit:hover { opacity: 0.88; }
+    .btn-submit:disabled { opacity: 0.6; cursor: default; }
+
+    /* Shown on step 4 only when the request fails to send */
+    .form-error {
+      margin: 0 0 0.5rem;
+      font-family: "Lato", sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #e53e3e;
+    }
+    .form-error[hidden] { display: none; }
+    .form-error a { color: inherit; font-weight: 700; text-decoration: underline; }
 
     /* Success screen */
     .form-success {
