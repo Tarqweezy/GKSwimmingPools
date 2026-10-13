@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+
+const cities = [
+  ['Santa Clarita', 'santa-clarita'], ['Valencia', 'valencia'], ['Porter Ranch', 'porter-ranch'],
+  ['Granada Hills', 'granada-hills'], ['Northridge', 'northridge'], ['Encino', 'encino'],
+  ['Sherman Oaks', 'sherman-oaks'], ['Woodland Hills', 'woodland-hills'], ['Calabasas', 'calabasas'],
+  ['Agoura Hills', 'agoura-hills'], ['Burbank', 'burbank'], ['Glendale', 'glendale'],
+];
+---
+
+<Layout
+  title="Pool service, repair and remodeling | GK Swimming Pools"
+  description="Weekly pool service, pool repair and pool remodeling in Santa Clarita and the San Fernando Valley. Family owned, licensed and insured. Call (818) 804-8204."
+>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img src="/images/cities/pool-remodel-fire-bowls.webp" alt="Backyard swimming pool with fire bowls after a GK remodel" fetchpriority="high" decoding="async" />
+    </div>
+    <div class="container hero__inner">
+      <h1 class="hero__h1">Pool Service, Repair &amp; Remodeling in Santa Clarita and the San Fernando Valley</h1>
+      <p class="hero__offer">Everything Your Pool Needs<br><em>One Local Team</em></p>
+      <p class="hero__sub">Three generations, 20+ years, one local team for everything your pool needs: weekly cleaning, equipment repair, and full remodels.</p>
+      <div class="hero__actions">
+        <a href="/contact" class="btn btn--primary">Get a Free Quote</a>
+        <a href="tel:8188048204" class="btn btn--outline">(818) 804-8204</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAINTENANCE -->
+  <section class="section">
+    <div class="container svc-row">
+      <div class="svc-row__media">
+        <img src="/images/services/pool-maintenance-hero.webp" alt="Technician testing pool water chemistry during weekly pool service" loading="lazy" decoding="async" />
+      </div>
+      <div class="svc-row__body">
+        <span class="eyebrow">Pool Maintenance</span>
+        <h2>Weekly Pool Service and Pool Cleaning</h2>
+        <p>Our weekly pool service keeps your water clear and your equipment healthy all year. Every pool cleaning visit includes skimming, brushing walls and steps, vacuuming, emptying skimmer and pump baskets, testing and balancing water chemistry, and a quick check of your pump, filter and heater.</p>
+        <p>We also handle spa and jacuzzi cleaning, and commercial pool maintenance for HOAs and apartment communities.</p>
+        <ul class="svc-links">
+          <li><a href="/services/pool-maintenance">Pool maintenance and cleaning service</a></li>
+          <li><a href="/services/jacuzzi-service">Jacuzzi and spa service</a></li>
+          <li><a href="/services/commercial-pool-services">Commercial pool services</a></li>
+          <li><a href="/blog/swimming-pool-maintenance-beginners">Guide: pool maintenance for beginners</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPAIRS -->
+  <section class="section section--alt">
+    <div class="container svc-row svc-row--flip">
+      <div class="svc-row__media">
+        <img src="/images/services/pool-repair-leak-detection.webp" alt="Pool leak detection and repair by a GK technician" loading="lazy" decoding="async" />
+      </div>
+      <div class="svc-row__body">
+        <span class="eyebrow">Pool Repair</span>
+        <h2>Pool Repair and Pool Equipment Repair</h2>
+        <p>When something breaks, we find the cause and fix it right. Our pool repair work covers pool pump and motor repair, filter and skimmer repair, pool heater repair and replacement, leak detection and repair, plumbing, salt cells, spa jets and controls, and plaster cracks.</p>
+        <p>We install and repair Pentair, Jandy and Hayward equipment only, and every repair starts with a free on-site assessment.</p>
+        <ul class="svc-links">
+          <li><a href="/services/pool-repairs">Pool repair services</a></li>
+          <li><a href="/services/pool-inspections">Pool inspections</a></li>
+          <li><a href="/blog/swimming-pool-pump-repair">Guide: swimming pool pump repair, step by step</a></li>
+          <li><a href="/blog/pool-leak-detection">Guide: pool leak detection</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- REMODELING -->
+  <section class="section">
+    <div class="container svc-row">
+      <div class="svc-row__media">
+        <img src="/images/remodeling/gk-pool-replastering-crew-santa-clarita-1.webp" alt="GK crew replastering a swimming pool in Santa Clarita" loading="lazy" decoding="async" />
+      </div>
+      <div class="svc-row__body">
+        <span class="eyebrow">Pool Remodeling</span>
+        <h2>Pool Remodeling and Swimming Pool Renovation</h2>
+        <p>Give an old pool a new life. Our pool remodeling team handles pool replastering and resurfacing, pool tile replacement, coping and deck work, and water features like fire bowls and sheer descents, from design to final fill.</p>
+        <ul class="svc-links">
+          <li><a href="/services/pool-remodeling">Pool remodeling</a></li>
+          <li><a href="/services/pool-replastering">Pool replastering and resurfacing</a></li>
+          <li><a href="/services/pool-retiling">Pool tile replacement</a></li>
+          <li><a href="/services/pool-coping-decks">Pool coping and decks</a></li>
+          <li><a href="/remodel-quote">Get a remodel quote</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Service Area</span>
+        <h2>Pool Service Near You</h2>
+        <p class="lead">We serve homes and businesses across Santa Clarita and the San Fernando Valley.</p>
+      </div>
+      <ul class="svc-cities">
+        {cities.map(([name, slug]) => (
+          <li><a href={`/locations/pool-service-${slug}`}>Pool service in {name}</a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="container">
+      <h2>Not Sure What Your Pool Needs?</h2>
+      <p>Call us for a free on-site assessment. Licensed, insured, and family owned.</p>
+      <a href="tel:8188048204" class="btn btn--primary">(818) 804-8204</a>
+    </div>
+  </div>
+
+  <ContactForm />
+
+</Layout>
+
+<style>
+  .svc-links a:hover, .svc-cities a:hover { color: var(--color-aqua-dark); }
+  .svc-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center; }
+  .svc-row--flip .svc-row__media { order: 2; }
+  .svc-row__media img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; display: block; }
+  .svc-row__body h2 { margin: var(--space-2) 0 var(--space-4); }
+  .svc-row__body p { color: var(--color-muted); margin-bottom: var(--space-4); }
+  .svc-links { list-style: none; padding: 0; margin: var(--space-4) 0 0; display: grid; gap: var(--space-2); }
+  .svc-links a, .svc-cities a { color: var(--color-deep); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .svc-cities { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3) var(--space-6); }
+  @media (max-width: 800px) {
+    .svc-row { grid-template-columns: 1fr; gap: var(--space-6); }
+    .svc-row--flip .svc-row__media { order: 0; }
+    .svc-cities { grid-template-columns: 1fr 1fr; }
+  }
+</style>
