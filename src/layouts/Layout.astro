@@ -27,8 +27,8 @@ const businessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
   name: "GK Swimming Pools",
-  image: "https://www.gkswimmingpools.com/images/logo-white.png",
-  url: "https://www.gkswimmingpools.com",
+  image: "https://gkswimmingpools.com/images/logo-white.png",
+  url: "https://gkswimmingpools.com",
   telephone: "+18188048204",
   email: "admin@GKswimmingpools.com",
   priceRange: "$$",
@@ -64,7 +64,7 @@ const businessSchema = {
 };
 
 // --- Auto-generated per-page schema ---
-const SITE = "https://www.gkswimmingpools.com";
+const SITE = "https://gkswimmingpools.com";
 const pathname = Astro.url.pathname.replace(/\/$/, "");
 const segments = pathname.split("/").filter(Boolean);
 
@@ -84,7 +84,7 @@ const breadcrumbSchema =
             "@type": "ListItem",
             position: 2,
             name: humanize(segments[segments.length - 1]),
-            item: `${SITE}${pathname}`,
+            item: `${SITE}${pathname}/`,
           },
         ],
       }
