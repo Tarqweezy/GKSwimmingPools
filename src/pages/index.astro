@@ -9,6 +9,36 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
+      name: "What's included in weekly pool service?",
+      acceptedAnswer: { "@type": "Answer", text: "Every weekly visit includes skimming, brushing the walls and steps, vacuuming, emptying the skimmer and pump baskets, testing and balancing the water, and a check of your pump, filter and heater. You get a report after every visit so you always know what we did." },
+    },
+    {
+      "@type": "Question",
+      name: "How much does weekly pool service cost?",
+      acceptedAnswer: { "@type": "Answer", text: "Our weekly pool service starts at $150/mo with chemicals included. The final price depends on your pool's size, how many trees are nearby, and your equipment. We take a quick look at your pool and give you a clear monthly price before we start." },
+    },
+    {
+      "@type": "Question",
+      name: "How often should I schedule swimming pool maintenance in LA?",
+      acceptedAnswer: { "@type": "Answer", text: "At least once a week. That's the minimum we recommend for every pool we service. LA's sun, heat and year-round use burn through chlorine fast, and without a weekly visit it can drop to zero and let algae take hold. Large pools or pools under a big tree often need two visits a week." },
+    },
+    {
+      "@type": "Question",
+      name: "Will I know what was done at each visit?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. After every visit you get a written report with the chemicals we added, how your equipment is running, and anything we flagged. If we spot a problem, we tell you right away instead of waiting for it to get worse." },
+    },
+    {
+      "@type": "Question",
+      name: "Is pool maintenance necessary during winter?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. Unlike colder climates where pools are drained and covered for the season, Los Angeles pools need year-round maintenance. Southern California winters are mild enough for algae to thrive, and rain, winds, and debris don't stop just because swim season is over. Neglecting winter service is one of the most reliable ways to arrive at spring with a green, imbalanced pool." },
+    },
+    {
+      "@type": "Question",
+      name: "What areas of Los Angeles do you service?",
+      acceptedAnswer: { "@type": "Answer", text: "We serve 12 cities across Santa Clarita and the San Fernando Valley: Santa Clarita, Valencia, Porter Ranch, Granada Hills, Northridge, Encino, Sherman Oaks, Woodland Hills, Calabasas, Agoura Hills, Burbank and Glendale. Not sure if you're in our area? Give us a call at (818) 804-8204." },
+    },
+    {
+      "@type": "Question",
       name: "What is the average cost to remodel a swimming pool?",
       acceptedAnswer: { "@type": "Answer", text: "Pool remodeling costs in Los Angeles vary widely based on what's being done. A basic replaster starts around $5,000 to $10,000, while a full remodel with new tile, coping, water features, and deck work can range from $25,000 to $75,000 or more. We offer transparent, itemized estimates so you know exactly where every dollar is going before we start. Financing options are also available for larger projects." },
     },
@@ -21,21 +51,6 @@ const faqSchema = {
       "@type": "Question",
       name: "What are the best materials for swimming pool resurfacing?",
       acceptedAnswer: { "@type": "Answer", text: "The most popular resurfacing options are standard plaster, quartz aggregate, and pebble finishes, each with its own tradeoffs in cost, durability, and appearance. Standard white plaster is the most affordable but tends to roughen and stain faster, especially in LA's hard water. For most LA homeowners, a pebble or quartz surface is the better long-term investment." },
-    },
-    {
-      "@type": "Question",
-      name: "How often should I schedule swimming pool maintenance in LA?",
-      acceptedAnswer: { "@type": "Answer", text: "For most Los Angeles homeowners, weekly pool maintenance is the right call. LA's year-round sunshine, high UV index, and near-constant pool use deplete chemicals and accumulate debris faster than almost anywhere else in the country. During cooler winter months, many pools can shift to bi-weekly visits without issue." },
-    },
-    {
-      "@type": "Question",
-      name: "Is pool maintenance necessary during winter?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes. Unlike colder climates where pools are drained and covered for the season, Los Angeles pools need year-round maintenance. Southern California winters are mild enough for algae to thrive, and rain, winds, and debris don't stop just because swim season is over. Neglecting winter service is one of the most reliable ways to arrive at spring with a green, imbalanced pool." },
-    },
-    {
-      "@type": "Question",
-      name: "What areas of Los Angeles do you service?",
-      acceptedAnswer: { "@type": "Answer", text: "GK Swimming Pools serves the greater Los Angeles area, with home base in Santa Clarita and Valencia. We regularly service pools throughout the San Fernando Valley, including Northridge, Granada Hills, Porter Ranch, Woodland Hills, and Encino, as well as Burbank, Glendale, Pasadena, La Canada Flintridge, Calabasas, Agoura Hills, and Westlake Village." },
     },
   ],
 };
@@ -71,11 +86,26 @@ const faqSchema = {
       <p class="hero__sub">Pool service plans starting at $150/mo. Crystal clear water, honest pricing, and a technician who actually shows up.</p>
 
       <div class="hero__actions">
-        <a href="/contact" class="btn btn--primary">Get Booked This Week</a>
+        <a href="#contact-form" class="btn btn--primary">Get in Touch</a>
         <a href="tel:8188048204" class="btn btn--outline">(818) 804-8204</a>
       </div>
     </div>
   </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-bar">
+    <div class="trust-bar__inner">
+      <span class="trust-item">&#9733; 5.0 Google Rating</span>
+      <span class="trust-sep" aria-hidden="true">|</span>
+      <span class="trust-item">3 Generations Family Owned</span>
+      <span class="trust-sep" aria-hidden="true">|</span>
+      <span class="trust-item">Licensed &amp; Insured</span>
+      <span class="trust-sep" aria-hidden="true">|</span>
+      <span class="trust-item">Weekly Service Reports</span>
+      <span class="trust-sep" aria-hidden="true">|</span>
+      <span class="trust-item">Chemicals Included</span>
+    </div>
+  </div>
 
   <!-- SERVICES. 4 across -->
   <section class="reveal section">
@@ -89,11 +119,11 @@ const faqSchema = {
       <div class="cards-grid cards-grid--four">
         <div class="card card--photo">
           <div class="card__media">
-            <img src="/images/services/pool-maintenance.webp" alt="Backyard pool with lounge chairs maintained by GK Swimming Pools" loading="lazy" />
+            <img src="/images/blog/weekly-pool-service-hero.webp" alt="Clean, clear pool on a GK Swimming Pools weekly service route" loading="lazy" />
           </div>
           <div class="card__body">
             <h3>Pool Maintenance</h3>
-            <p>Weekly or bi-weekly service that keeps your water chemistry perfect year-round.</p>
+            <p>Weekly service that keeps your water chemistry perfect year-round.</p>
             <ul>
               <li>Water Chemistry Balancing</li>
               <li>Complete Debris Removal</li>
@@ -106,7 +136,7 @@ const faqSchema = {
 
         <div class="card card--photo">
           <div class="card__media">
-            <img src="/images/services/pool-inspections.webp" alt="Renovated pool waterfall feature inspected by GK Swimming Pools" loading="lazy" />
+            <img src="/images/cities/burbank-pool-spa-inspection.webp" alt="Pool and raised spa inspected by GK Swimming Pools" loading="lazy" />
           </div>
           <div class="card__body">
             <h3>Pool Inspections</h3>
@@ -123,7 +153,7 @@ const faqSchema = {
 
         <div class="card card--photo">
           <div class="card__media">
-            <img src="/images/services/pool-repair.webp" alt="Resort-style pool repaired and maintained by GK Swimming Pools" loading="lazy" />
+            <img src="/images/services/pool-repair-equipment.webp" alt="Pool pump and filter equipment repaired by GK Swimming Pools" loading="lazy" />
           </div>
           <div class="card__body">
             <h3>Pool Repair</h3>
@@ -140,7 +170,7 @@ const faqSchema = {
 
         <div class="card card--photo">
           <div class="card__media">
-            <img src="/images/services/pool-remodeling.webp" alt="Remodeled backyard pool with terra cotta decking and Mediterranean landscaping" loading="lazy" />
+            <img src="/images/remodeling/gk-pool-replastering-crew-santa-clarita-2.webp" alt="GK crew replastering a pool in Santa Clarita" loading="lazy" />
           </div>
           <div class="card__body">
             <h3>Pool Remodeling</h3>
@@ -260,38 +290,53 @@ const faqSchema = {
         <span class="eyebrow">Common Questions</span>
         <h2>FAQs</h2>
       </div>
-      <div class="faq-list">
-
-        <details class="faq-item">
-          <summary>What is the average cost to remodel a swimming pool?</summary>
-          <p>Pool remodeling costs in Los Angeles vary widely based on what's being done. A basic replaster starts around $5,000 to $10,000, while a full remodel with new tile, coping, water features, and deck work can range from $25,000 to $75,000 or more. We offer transparent, itemized estimates so you know exactly where every dollar is going before we start. Financing options are also available for larger projects.</p>
+      <div class="faq-groups">
+        <details class="faq-group">
+          <summary class="faq-group__title"><h3>Pool Maintenance</h3></summary>
+          <div class="faq-list">
+          <details class="faq-item">
+            <summary>What's included in weekly pool service?</summary>
+            <p>Every weekly visit includes skimming, brushing the walls and steps, vacuuming, emptying the skimmer and pump baskets, testing and balancing the water, and a check of your pump, filter and heater. You get a report after every visit so you always know what we did.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How much does weekly pool service cost?</summary>
+            <p>Our weekly pool service starts at $150/mo with chemicals included. The final price depends on your pool's size, how many trees are nearby, and your equipment. We take a quick look at your pool and give you a clear monthly price before we start.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How often should I schedule swimming pool maintenance in LA?</summary>
+            <p>At least once a week. That's the minimum we recommend for every pool we service. LA's sun, heat and year-round use burn through chlorine fast, and without a weekly visit it can drop to zero and let algae take hold. Large pools or pools under a big tree often need two visits a week.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Will I know what was done at each visit?</summary>
+            <p>Yes. After every visit you get a written report with the chemicals we added, how your equipment is running, and anything we flagged. If we spot a problem, we tell you right away instead of waiting for it to get worse.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is pool maintenance necessary during winter?</summary>
+            <p>Yes. Unlike colder climates where pools are drained and covered for the season, Los Angeles pools need year-round maintenance. Southern California winters are mild enough for algae to thrive, and rain, winds, and debris don't stop just because swim season is over. Neglecting winter service is one of the most reliable ways to arrive at spring with a green, imbalanced pool.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What areas of Los Angeles do you service?</summary>
+            <p>We serve 12 cities across Santa Clarita and the San Fernando Valley: Santa Clarita, Valencia, Porter Ranch, Granada Hills, Northridge, Encino, Sherman Oaks, Woodland Hills, Calabasas, Agoura Hills, Burbank and Glendale. Not sure if you're in our area? Give us a call at (818) 804-8204.</p>
+          </details>
+          </div>
         </details>
-
-        <details class="faq-item">
-          <summary>How long does a pool remodeling project usually take?</summary>
-          <p>Most pool remodeling projects in the Los Angeles area take anywhere from 1 to 8 weeks depending on scope. A straightforward replaster typically runs 7 to 10 days from drain to refill, while a full remodel involving new coping, tile, water features, and deck work can take 4 to 8 weeks. We provide a firm timeline before work begins and keep you updated at every stage.</p>
+        <details class="faq-group">
+          <summary class="faq-group__title"><h3>Pool Remodels</h3></summary>
+          <div class="faq-list">
+          <details class="faq-item">
+            <summary>What is the average cost to remodel a swimming pool?</summary>
+            <p>Pool remodeling costs in Los Angeles vary widely based on what's being done. A basic replaster starts around $5,000 to $10,000, while a full remodel with new tile, coping, water features, and deck work can range from $25,000 to $75,000 or more. We offer transparent, itemized estimates so you know exactly where every dollar is going before we start. Financing options are also available for larger projects.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How long does a pool remodeling project usually take?</summary>
+            <p>Most pool remodeling projects in the Los Angeles area take anywhere from 1 to 8 weeks depending on scope. A straightforward replaster typically runs 7 to 10 days from drain to refill, while a full remodel involving new coping, tile, water features, and deck work can take 4 to 8 weeks. We provide a firm timeline before work begins and keep you updated at every stage.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What are the best materials for swimming pool resurfacing?</summary>
+            <p>The most popular resurfacing options are standard plaster, quartz aggregate, and pebble finishes, each with its own tradeoffs in cost, durability, and appearance. Standard white plaster is the most affordable but tends to roughen and stain faster, especially in LA's hard water. For most LA homeowners, a pebble or quartz surface is the better long-term investment.</p>
+          </details>
+          </div>
         </details>
-
-        <details class="faq-item">
-          <summary>What are the best materials for swimming pool resurfacing?</summary>
-          <p>The most popular resurfacing options are standard plaster, quartz aggregate, and pebble finishes, each with its own tradeoffs in cost, durability, and appearance. Standard white plaster is the most affordable but tends to roughen and stain faster, especially in LA's hard water. For most LA homeowners, a pebble or quartz surface is the better long-term investment.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>How often should I schedule swimming pool maintenance in LA?</summary>
-          <p>For most Los Angeles homeowners, weekly pool maintenance is the right call. LA's year-round sunshine, high UV index, and near-constant pool use deplete chemicals and accumulate debris faster than almost anywhere else in the country. During cooler winter months, many pools can shift to bi-weekly visits without issue.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is pool maintenance necessary during winter?</summary>
-          <p>Yes. Unlike colder climates where pools are drained and covered for the season, Los Angeles pools need year-round maintenance. Southern California winters are mild enough for algae to thrive, and rain, winds, and debris don't stop just because swim season is over. Neglecting winter service is one of the most reliable ways to arrive at spring with a green, imbalanced pool.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What areas of Los Angeles do you service?</summary>
-          <p>GK Swimming Pools serves the greater Los Angeles area, with home base in Santa Clarita and Valencia. We regularly service pools throughout the San Fernando Valley, including Northridge, Granada Hills, Porter Ranch, Woodland Hills, and Encino, as well as Burbank, Glendale, Pasadena, La Canada Flintridge, Calabasas, Agoura Hills, and Westlake Village.</p>
-        </details>
-
       </div>
     </div>
   </section>
@@ -349,4 +394,53 @@ const faqSchema = {
     startAuto();
   </script>
 
+  <!-- MOBILE STICKY CONTACT BAR -->
+  <div class="sticky-cta" id="sticky-cta" aria-label="Quick contact">
+    <a href="tel:8188048204" class="sticky-cta__btn sticky-cta__btn--call">Call (818) 804-8204</a>
+    <a href="#contact-form" class="sticky-cta__btn sticky-cta__btn--touch">Get in Touch</a>
+  </div>
+
+  <script>
+    const bar = document.getElementById('sticky-cta');
+    const hero = document.querySelector('.hero');
+    const form = document.getElementById('contact-form');
+    if (bar && hero) {
+      const update = () => {
+        const pastHero = hero.getBoundingClientRect().bottom < 0;
+        const atForm = form && form.getBoundingClientRect().top < window.innerHeight;
+        bar.classList.toggle('is-hidden', !pastHero || atForm);
+      };
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+    }
+  </script>
+
 </Layout>
+
+<style>
+  .trust-bar { background:#05305f; padding:var(--space-4) var(--space-8); }
+  .trust-bar__inner { max-width:1060px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:var(--space-4); flex-wrap:wrap; }
+  .trust-sep { color:rgba(255,255,255,.3); font-size:.85rem; user-select:none; }
+  .trust-item { color:rgba(255,255,255,.82); font-size:var(--text-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; white-space:nowrap; }
+  #contact-form { scroll-margin-top: 110px; }
+  .faq-groups { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-8) var(--space-12); align-items:start; }
+  .faq-group__title { display:flex; align-items:center; justify-content:space-between; cursor:pointer; list-style:none; padding:var(--space-4) 0; border-bottom:2px solid var(--color-aqua, #5ce1e6); }
+  .faq-group__title::-webkit-details-marker { display:none; }
+  .faq-group__title h3 { font-size:var(--text-lg, 1.25rem); color:var(--color-deep); margin:0; }
+  .faq-group__title::after { content:'+'; font-size:1.75rem; font-weight:700; line-height:1; color:var(--color-aqua-dark, #2bb8bd); transition:transform .2s ease; }
+  .faq-group[open] > .faq-group__title::after { transform:rotate(45deg); }
+  .faq-group[open] > .faq-list { margin-top:var(--space-2); }
+  @media (max-width: 800px) { .faq-groups { grid-template-columns:1fr; } }
+  .sticky-cta { display:none; }
+  .sticky-cta.is-hidden { transform:translateY(110%); }
+  @media (max-width: 800px) {
+    .trust-bar { padding:var(--space-4); }
+    .trust-sep { display:none; }
+    .trust-bar__inner { gap:var(--space-2) var(--space-4); }
+    .sticky-cta { display:flex; position:fixed; left:0; right:0; bottom:0; z-index:50; gap:8px; padding:10px 12px calc(10px + env(safe-area-inset-bottom)); background:#05305f; box-shadow:0 -4px 16px rgba(0,0,0,.18); transition:transform .25s ease; }
+    .sticky-cta__btn { flex:1; text-align:center; padding:12px 8px; border-radius:8px; font-weight:700; font-size:.95rem; text-decoration:none; }
+    .sticky-cta__btn--call { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.6); }
+    .sticky-cta__btn--touch { background:var(--color-aqua, #5ce1e6); color:#05305f; }
+    :global(body) { padding-bottom:72px; }
+  }
+</style>

@@ -6,21 +6,70 @@ import CityLayout from '../../layouts/CityLayout.astro';
   city="Burbank"
   region="CA"
   slug="pool-service-burbank"
-  localContext="Burbank is a well-established city on the eastern edge of the San Fernando Valley with a strong residential neighborhood character and a solid concentration of single-family homes, many of which have pools. GK Swimming Pools services Burbank weekly, maintaining pools across the Rancho, Chandler Estates, and hillside neighborhoods."
-  localContext2="Burbank pools tend to be well-maintained by homeowners who have owned their properties for years and take pride in them. We fit right into that culture. Our service is thorough, our pricing is transparent, and we communicate clearly about what we find and what we do at every visit."
+  seoTitle="Pool Service, Inspections & Renovation in Burbank | GK Pools"
+  seoDescription="Weekly pool service, pool and hot tub inspections, and pool renovation in Burbank. Honest pricing, weekly reports, family owned. Call (818) 804-8204."
+  heroH1="Pool Service, Inspections & Renovation in Burbank, CA"
+  localContext="Burbank is a well-established city on the eastern edge of the San Fernando Valley with a strong residential character and a solid concentration of single-family homes, many of which have pools. GK Swimming Pools services, inspects and renovates pools across the Rancho, Chandler Estates, and Burbank's hillside neighborhoods."
+  localContext2="Burbank pools tend to be well cared for by homeowners who have owned their properties for years and take pride in them. We fit right into that culture. Our service is thorough, our pricing is transparent, and we communicate clearly about what we find and what we do at every visit."
+  focusSections={[
+    {
+      eyebrow: "Pool Inspections in Burbank",
+      heading: "Swimming Pool and Hot Tub Inspections",
+      paras: [
+        "Buying a Burbank home with a pool or spa? A general home inspection usually gives the pool a quick look at best. Our pool and hot tub inspections go further: the plaster and tile, the pump, filter, heater and controls, the plumbing, and the spa jets and blower.",
+        "You get a written report with what we found and what it would take to fix, so you can negotiate with real numbers instead of guesses. We inspect for homeowners too, when a pool is getting older and you want to know what's coming before it fails."
+      ],
+      links: [
+        { href: "/services/pool-inspections/", text: "Pool inspection services" },
+        { href: "/services/jacuzzi-service/", text: "Hot tub and spa service" }
+      ],
+      image: { src: "/images/cities/burbank-pool-spa-inspection.webp", alt: "Burbank pool and raised spa with waterfall serviced by GK Swimming Pools" }
+    },
+    {
+      eyebrow: "Pool Renovation in Burbank",
+      heading: "Pool Replastering, Tile and Renovation",
+      paras: [
+        "A lot of Burbank pools were built decades ago and are reaching the point where the plaster is rough, stained or chipping, and the tile line is showing its age. Our pool renovation team handles replastering and resurfacing, tile replacement, coping and decks, from the first walk through to the final fill.",
+        "Before we recommend a resurface, we test the plumbing and equipment too. That way you're not replastering a pool only to have a pipe fail a year later."
+      ],
+      links: [
+        { href: "/services/pool-remodeling/", text: "Pool remodeling and renovation" },
+        { href: "/services/pool-replastering/", text: "Pool replastering and resurfacing" },
+        { href: "/services/pool-retiling/", text: "Pool tile replacement" },
+        { href: "/remodel-quote/", text: "Get a remodel quote" }
+      ],
+      image: { src: "/images/cities/burbank-pool-renovation.webp", alt: "Older Burbank pool with brick coping and worn plaster, a common candidate for renovation" }
+    },
+    {
+      eyebrow: "Weekly Pool Service in Burbank",
+      heading: "Weekly Pool Cleaning From $150/mo",
+      paras: [
+        "Our weekly pool service in Burbank starts at $150/mo with chemicals included. Every visit covers skimming, brushing, vacuuming, emptying the baskets, testing and balancing the water, and a check of your equipment, with a written report after every visit."
+      ],
+      links: [
+        { href: "/services/pool-maintenance/", text: "Pool maintenance and cleaning service" },
+        { href: "/blog/how-often-should-you-service-your-pool/", text: "Guide: how often should you service your pool?" }
+      ]
+    }
+  ]}
   nearbyAreas={["Glendale", "North Hollywood", "Studio City", "Toluca Lake", "Sun Valley", "Shadow Hills", "La Crescenta"]}
   heroImage="/images/cities/backyard-pool-fire-feature.webp"
-  whyChooseUs="Burbank homeowners choose GK because we respect a neighborhood where families have cared for the same pool for decades. We match that care with honest assessments and consistent service, not shortcuts."
+  whyChooseUs="Burbank homeowners choose GK because we respect a neighborhood where families have cared for the same pool for decades. We match that care with honest inspections, honest pricing and consistent service, not shortcuts."
   callouts={[
-    {
-      icon: "🏡",
-      title: "Established Neighborhoods",
-      body: "Burbank's residential areas are mature and well-kept. We service pools in these neighborhoods with the care and consistency that long-time homeowners expect. No shortcuts, no missed visits."
-    },
     {
       icon: "🌡️",
       title: "Eastern Valley Heat",
-      body: "Burbank sits in a warm pocket of the eastern Valley, with summer temperatures regularly climbing into the mid to upper 90s. We account for heat-driven chemical loss and adjust dosing through the summer months."
+      body: "Burbank sits in a warm pocket of the eastern Valley, with summer temperatures regularly climbing into the mid to upper 90s. We account for heat-driven chlorine loss and adjust dosing through the summer months."
+    },
+    {
+      icon: "⚗️",
+      title: "High pH Water",
+      body: "We see high pH in a lot of Burbank pools. High pH makes chlorine work less effectively, clouds the water, and leaves scale on tile and equipment. We test and correct it on every visit."
+    },
+    {
+      icon: "🍂",
+      title: "Fall Leaves",
+      body: "Burbank's mature, tree-lined streets mean a lot of leaves in the pool this time of year. They clog skimmers and baskets, strain the filter, and feed algae as they break down. Weekly cleaning keeps them under control."
     },
     {
       icon: "📋",
@@ -28,6 +77,24 @@ import CityLayout from '../../layouts/CityLayout.astro';
       body: "Every Burbank client gets a written report after each visit: chemicals added, equipment status, and anything we flagged. No guessing about what was done to your pool or when."
     }
   ]}
-  caseStudyTitle="When two decades of care meets two decades of wear"
-  caseStudy="Burbank's established neighborhoods, the Rancho, Chandler Estates, and the surrounding streets, are full of pools that have been well cared for by the same families for decades, which is a good thing and also means a lot of original equipment and plumbing reaching the end of its realistic lifespan around the same time. The pattern we see most in Burbank is plaster that's due for a resurface arriving right alongside plumbing that's been slowly losing efficiency. We always test both before recommending work, so a homeowner replastering their pool isn't caught off guard by a plumbing failure eighteen months later."
+  cityFaqs={[
+    {
+      question: "Do you do pool inspections for home buyers in Burbank?",
+      answer: "Yes. We inspect pools and spas for Burbank home buyers before closing. We check the surfaces, equipment, plumbing and spa components, then give you a written report with what we found and what repairs would cost, so you can make your offer with real information."
+    },
+    {
+      question: "Do you inspect hot tubs and spas in Burbank?",
+      answer: "Yes. Our Burbank inspections cover attached spas and hot tubs, including the jets, blower, heater, controls and plumbing. If something needs work, the report spells it out."
+    },
+    {
+      question: "How do I know if my Burbank pool needs renovation?",
+      answer: "Rough or chipping plaster, stains that won't brush off, cracked or missing tile, and a pool that's hard to keep clean are the usual signs. Many Burbank pools are decades old, so we inspect the plaster, tile, plumbing and equipment together and tell you honestly what needs to be done now and what can wait."
+    },
+    {
+      question: "Why is the pH in my Burbank pool always high?",
+      answer: "High pH is common in Burbank pools. Hard Valley water, fresh plaster, and water features all push pH up over time. High pH makes chlorine less effective and causes scale and cloudy water, so we test and correct it on every weekly visit."
+    }
+  ]}
+  caseStudyTitle="When decades of care meet decades of wear"
+  caseStudy="Burbank's established neighborhoods are full of pools that have been well cared for by the same families for decades, which is a good thing and also means a lot of original equipment and plumbing reaching the end of its realistic lifespan around the same time. The pattern we see most in Burbank is plaster that's due for a resurface arriving right alongside plumbing that's been slowly losing efficiency. We always test both before recommending work, so a homeowner replastering their pool isn't caught off guard by a plumbing failure eighteen months later."
 />

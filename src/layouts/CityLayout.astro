@@ -16,6 +16,11 @@ interface Props {
   caseStudy?: string;
   heroImage?: string;
   whyChooseUs?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  heroH1?: string;
+  focusSections?: { eyebrow: string; heading: string; paras: string[]; links?: { href: string; text: string }[]; image?: { src: string; alt: string } }[];
+  cityFaqs?: { question: string; answer: string }[];
 }
 
 const {
@@ -30,10 +35,15 @@ const {
   caseStudy,
   heroImage,
   whyChooseUs,
+  seoTitle,
+  seoDescription,
+  heroH1,
+  focusSections = [],
+  cityFaqs = [],
 } = Astro.props;
 
-const title = `Pool Service in ${city}, ${region} | GK Swimming Pools`;
-const description = `Expert pool maintenance, repairs, and remodeling in ${city}, ${region}. Honest pricing, 20+ years experience. Call (818) 804-8204.`;
+const title = seoTitle || `Pool Service in ${city}, ${region} | GK Swimming Pools`;
+const description = seoDescription || `Expert pool maintenance, repairs, and remodeling in ${city}, ${region}. Honest pricing, 20+ years experience. Call (818) 804-8204.`;
 const pageAreaServed = [city, ...nearbyAreas];
 ---
 
@@ -47,7 +57,7 @@ const pageAreaServed = [city, ...nearbyAreas];
       </div>
     )}
     <div class="container hero__inner">
-      <h1 class="hero__h1">{city} &middot; {region}</h1>
+      <h1 class="hero__h1">{heroH1 || `${city} \u00b7 ${region}`}</h1>
       <p class="hero__offer">Pool Service in<br><em>{city}, {region}</em></p>
       <p class="hero__sub">Maintenance, repairs, inspections, and remodeling. Serving {city} and surrounding areas. Honest pricing, no contracts, 20+ years experience.</p>
       <div class="hero__actions">
@@ -67,6 +77,29 @@ const pageAreaServed = [city, ...nearbyAreas];
       </div>
     </div>
   </section>
+
+  <!-- FOCUS SECTIONS (optional, city-specific service deep dives) -->
+  {focusSections.map((f, i) => (
+    <section class={`section ${i % 2 === 0 ? 'section--alt' : ''}`}>
+      <div class={`container ${f.image ? 'focus-row' : ''} ${i % 2 === 1 ? 'focus-row--flip' : ''}`}>
+        {f.image && (
+          <div class="focus-row__media">
+            <img src={f.image.src} alt={f.image.alt} loading="lazy" decoding="async" />
+          </div>
+        )}
+        <div class="focus-row__body" style={f.image ? '' : 'max-width: 760px;'}>
+          <span class="eyebrow">{f.eyebrow}</span>
+          <h2>{f.heading}</h2>
+          {f.paras.map(p => <p>{p}</p>)}
+          {f.links && (
+            <ul class="focus-links">
+              {f.links.map(l => <li><a href={l.href}>{l.text}</a></li>)}
+            </ul>
+          )}
+        </div>
+      </div>
+    </section>
+  ))}
 
   <!-- SERVICES. cards with brief descriptions, linking to the full service pages -->
   <section class="section section--alt">
@@ -163,7 +196,7 @@ const pageAreaServed = [city, ...nearbyAreas];
     </div>
   </section>
 
-  <FAQSection faqs={getCityFAQs(city)} heading={`Pool Service FAQs. ${city}`} />
+  <FAQSection faqs={[...cityFaqs, ...getCityFAQs(city)]} heading={`Pool Service FAQs. ${city}`} />
 
   <!-- CTA BAND -->
   <div class="cta-band">
@@ -177,3 +210,18 @@ const pageAreaServed = [city, ...nearbyAreas];
   <ContactForm />
 
 </Layout>
+
+<style is:global>
+  .focus-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center; }
+  .focus-row--flip .focus-row__media { order: 2; }
+  .focus-row__media img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; display: block; }
+  .focus-row__body h2 { margin: var(--space-2) 0 var(--space-4); }
+  .focus-row__body p { color: var(--color-muted); line-height: 1.8; margin-bottom: var(--space-4); }
+  .focus-links { list-style: none; padding: 0; margin: var(--space-4) 0 0; display: grid; gap: var(--space-2); }
+  .focus-links a { color: var(--color-deep); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .focus-links a:hover { color: var(--color-aqua-dark); }
+  @media (max-width: 800px) {
+    .focus-row { grid-template-columns: 1fr; gap: var(--space-6); }
+    .focus-row--flip .focus-row__media { order: 0; }
+  }
+</style>
