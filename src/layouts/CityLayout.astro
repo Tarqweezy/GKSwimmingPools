@@ -11,7 +11,7 @@ interface Props {
   localContext: string;
   localContext2: string;
   nearbyAreas: string[];
-  callouts?: { icon: string; title: string; body: string }[];
+  callouts?: { icon?: string; title: string; body: string }[];
   caseStudyTitle?: string;
   caseStudy?: string;
   heroImage?: string;
@@ -111,22 +111,18 @@ const pageAreaServed = [city, ...nearbyAreas];
       </div>
       <div class="service-cards-grid">
         <a href="/services/pool-maintenance" class="service-card">
-          <span class="service-card__icon">🏊</span>
           <span class="service-card__title">Pool Maintenance</span>
           <p class="service-card__desc">We maintain your pool's chemistry and keep the water clear and safe year-round. You'll always be updated on anything going on with your pool.</p>
         </a>
         <a href="/services/pool-repairs" class="service-card">
-          <span class="service-card__icon">🔧</span>
           <span class="service-card__title">Pool Repairs</span>
           <p class="service-card__desc">Fast, reliable repairs for cracks, leaks, pipes, and equipment. We diagnose the real problem and fix it right the first time.</p>
         </a>
         <a href="/services/pool-inspections" class="service-card">
-          <span class="service-card__icon">🔍</span>
           <span class="service-card__title">Pool Inspections</span>
           <p class="service-card__desc">A full inspection of your pool and its system for leaks, damage, and other issues, before they become expensive problems.</p>
         </a>
         <a href="/services/pool-remodeling" class="service-card">
-          <span class="service-card__icon">&#10024;</span>
           <span class="service-card__title">Pool Remodeling</span>
           <p class="service-card__desc">Transform your backyard with new plaster, tile, decking, and modern upgrades built to last for years to come.</p>
         </a>
@@ -157,7 +153,6 @@ const pageAreaServed = [city, ...nearbyAreas];
         <div class="why-grid">
           {callouts.map((c, i) => (
             <div class="why-item">
-              <div class="why-item__num" style="font-size: 2rem;" aria-hidden="true">{c.icon}</div>
               <h3>{c.title}</h3>
               <p>{c.body}</p>
             </div>
