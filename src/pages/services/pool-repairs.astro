@@ -28,6 +28,8 @@ import { poolRepairFAQs } from '../../data/faq-data.js';
 
   <div class="trust-bar">
     <div class="trust-bar__inner">
+      <span class="trust-item">&#9733; 5-Star Google Rating</span>
+      <span class="trust-sep" aria-hidden="true">|</span>
       <span class="trust-item">20+ Years Experience</span>
       <span class="trust-sep" aria-hidden="true">|</span>
       <span class="trust-item">3 Generations Family Owned</span>
@@ -35,8 +37,7 @@ import { poolRepairFAQs } from '../../data/faq-data.js';
       <span class="trust-item">Licensed &amp; Insured</span>
       <span class="trust-sep" aria-hidden="true">|</span>
       <span class="trust-item">Free Assessment</span>
-      <span class="trust-sep" aria-hidden="true">|</span>
-      <span class="trust-item">5.0 &#9733; Google Rating</span>
+
     </div>
   </div>
 
@@ -232,7 +233,7 @@ import { poolRepairFAQs } from '../../data/faq-data.js';
 
   <section class="reveal testimonials">
     <div class="container">
-      <h2>What our clients say</h2>
+      <h2>5-Star Rated on Google</h2>
     </div>
     <div class="testimonials__track-wrap">
       <div class="testimonials__track" id="testimonials-track">
@@ -275,6 +276,7 @@ import { poolRepairFAQs } from '../../data/faq-data.js';
       <div class="testimonials__dots" id="testimonials-dots"></div>
       <button class="testimonials__btn" id="next-btn" aria-label="Next">&#8594;</button>
     </div>
+    <p class="testimonials__more"><a href="https://www.google.com/search?q=GK+Swimming+Pools&amp;stick=H4sIAAAAAAAA_-NgU1I1qDBKtkizNDM1NTUxtzRPSjG1MqhIMTUxMDBLMjFISk42SjZKXcQq6O6tEFyemZubmZeuEJCfn1MMAGMPECQ9AAAA&amp;hl=en" target="_blank" rel="noopener">Read all our reviews on Google</a></p>
   </section>
 
   <FAQSection faqs={poolRepairFAQs} heading="Pool Repair FAQs" />
@@ -333,6 +335,8 @@ import { poolRepairFAQs } from '../../data/faq-data.js';
 </Layout>
 
 <style>
+  .testimonials__more { display:block; width:100%; max-width:none; text-align:center; margin:var(--space-6) auto 0; }
+  .testimonials__more a { color:#fff; font-weight:700; text-decoration:underline; text-underline-offset:3px; opacity:.9; }
   .trust-bar { background:#05305f; padding:var(--space-4) var(--space-8); }
   .trust-bar__inner { max-width:1060px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:var(--space-4); flex-wrap:wrap; }
   .trust-sep { color:rgba(255,255,255,.3); font-size:.85rem; user-select:none; }
