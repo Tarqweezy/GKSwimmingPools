@@ -6,7 +6,7 @@ import { poolRepairFAQs } from '../../data/faq-data.js';
 ---
 
 <Layout
-  title="Pool Repair Service in Santa Clarita & Los Angeles | GK Swimming Pools"
+  title="Pool Repair Service in the San Fernando Valley | GK Pools"
   description="Pool repair in Santa Clarita and the San Fernando Valley. Pump, heater, filter, and leak repair with a free on-site assessment. Call (818) 804-8204."
 >
 
@@ -19,7 +19,7 @@ import { poolRepairFAQs } from '../../data/faq-data.js';
       <p class="hero__offer">Something Broken?<br>Get a <em>Free On-Site Assessment</em></p>
       <p class="hero__sub">Leaks, cracks, broken pipes, and failing equipment. We find the actual cause before we quote, so you are not paying to fix a symptom.</p>
       <div class="hero__actions">
-        <a href="/contact" class="btn btn--primary">Book My Free Assessment</a>
+        <a href="/contact/" class="btn btn--primary">Book My Free Assessment</a>
         <a href="tel:8188048204" class="btn btn--outline">(818) 804-8204</a>
       </div>
       <p class="hero__trust">Three generations family owned &middot; Licensed and insured &middot; No surprise charges</p>
@@ -180,7 +180,7 @@ import { poolRepairFAQs } from '../../data/faq-data.js';
         </div>
       </div>
       <div class="process-cta">
-        <a href="/contact" class="btn btn--primary">Book My Free Assessment</a>
+        <a href="/contact/" class="btn btn--primary">Book My Free Assessment</a>
       </div>
     </div>
   </section>
@@ -279,6 +279,26 @@ import { poolRepairFAQs } from '../../data/faq-data.js';
     <p class="testimonials__more"><a href="https://www.google.com/search?q=GK+Swimming+Pools&amp;stick=H4sIAAAAAAAA_-NgU1I1qDBKtkizNDM1NTUxtzRPSjG1MqhIMTUxMDBLMjFISk42SjZKXcQq6O6tEFyemZubmZeuEJCfn1MMAGMPECQ9AAAA&amp;hl=en" target="_blank" rel="noopener">Read all our reviews on Google</a></p>
   </section>
 
+  <section class="section svc-cities">
+    <div class="container">
+      <h2>Cities We Serve</h2>
+      <ul class="svc-cities__list">
+        <li><a href="/locations/pool-service-santa-clarita/">Pool repair in Santa Clarita</a></li>
+        <li><a href="/locations/pool-service-valencia/">Pool repair in Valencia</a></li>
+        <li><a href="/locations/pool-service-granada-hills/">Pool repair in Granada Hills</a></li>
+        <li><a href="/locations/pool-service-porter-ranch/">Pool repair in Porter Ranch</a></li>
+        <li><a href="/locations/pool-service-northridge/">Pool repair in Northridge</a></li>
+        <li><a href="/locations/pool-service-encino/">Pool repair in Encino</a></li>
+        <li><a href="/locations/pool-service-sherman-oaks/">Pool repair in Sherman Oaks</a></li>
+        <li><a href="/locations/pool-service-woodland-hills/">Pool repair in Woodland Hills</a></li>
+        <li><a href="/locations/pool-service-calabasas/">Pool repair in Calabasas</a></li>
+        <li><a href="/locations/pool-service-burbank/">Pool repair in Burbank</a></li>
+        <li><a href="/locations/pool-service-glendale/">Pool repair in Glendale</a></li>
+        <li><a href="/locations/pool-service-agoura-hills/">Pool repair in Agoura Hills</a></li>
+      </ul>
+    </div>
+  </section>
+
   <FAQSection faqs={poolRepairFAQs} heading="Pool Repair FAQs" />
 
   <div class="cta-band">
@@ -335,6 +355,9 @@ import { poolRepairFAQs } from '../../data/faq-data.js';
 </Layout>
 
 <style>
+  .svc-cities h2 { text-align:center; margin-bottom:var(--space-8); }
+  .svc-cities__list { list-style:none; padding:0; margin:0 auto; max-width:960px; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:var(--space-3) var(--space-6); }
+  .svc-cities__list a { color:var(--color-deep, #05305f); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
   .testimonials__more { display:block; width:100%; max-width:none; text-align:center; margin:var(--space-6) auto 0; }
   .testimonials__more a { color:#fff; font-weight:700; text-decoration:underline; text-underline-offset:3px; opacity:.9; }
   .trust-bar { background:#05305f; padding:var(--space-4) var(--space-8); }
